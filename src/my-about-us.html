@@ -1,0 +1,50 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html" >
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/paper-ripple/paper-ripple.html" >
+<link rel="import" href="../bower_components/paper-styles/color.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+
+<link rel="import" href="flex-layer.html" >
+
+
+<dom-module id="my-about-us">
+
+  <template>
+    <style include="iron-flex iron-flex-alignment"></style>
+    <style >
+
+
+      </style>
+      <flex-layer
+        class="content"
+        name="new-view"
+        heading="Kids Are Creative"
+        bh="100%"
+        bw="auto"
+        content="and we know to boost it to the extreme level"
+        bimage="kids_creativity/creative_rainbow_blue_balon.svg"
+        ltext=""
+        h=""
+        margin-top="10px"
+        margin-top-mediaq="10px"
+
+        > </flex-layer>
+
+      </div>
+    </div>
+
+    </template>
+
+  <script>
+    Polymer({
+      is: 'my-about-us',
+      properties: {
+        route: Object
+      }
+    });
+  </script>
+
+</dom-module>
