@@ -1,17 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/paper-material/paper-material.html" >
-<link rel="import" href="../bower_components/iron-image/iron-image.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
-<link rel="import" href="../bower_components/paper-ripple/paper-ripple.html" >
-<link rel="import" href="../bower_components/paper-styles/color.html">
-<link rel="import" href="../bower_components/paper-styles/typography.html">
-<link rel="import" href="../bower_components/paper-card/paper-card.html">
-
 <link rel="import" href="../bower_components/parallax-container/parallax-container.html">
-
-
-<link rel="import" href="flex-layer.html" >
-
 
 <dom-module id="my-about-us">
 
@@ -19,11 +8,8 @@
     <style include="iron-flex iron-flex-alignment"></style>
     <style>
       body,html :host {
-
         overflow: hidden;
-
       }
-
 
       .title {
         text-align: center;
@@ -33,23 +19,25 @@
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
       }
-      #group1 [layer="-1"]{
-        background: #1f8dd6;
-      }
-      #group2{
-        background: #1faad6;
-      }
-      #group3 [layer="-2"]{
-        background: #1f8dff;
-      }
-      #group4 {
-        background: #0077dd;
-      }
-      .image-customized{
-        background: url('kids_creativity/flying-boy.jpg') center no-repeat;
+
+
+      .image-customized2{
+        background: url('kids_creativity/kids_bulb.jpg') center no-repeat;
         background-size: cover;
-        /*height: 450px;*/
       }
+      .image-customized3{
+        background: url('kids_creativity/thechild_about_us.jpg') center no-repeat;
+        background-size: cover;
+      }
+      .image-customized4{
+        background: url('kids_creativity/environment.jpg') center no-repeat;
+        background-size: cover;
+      }
+      .image-customized5{
+        background: url('kids_creativity/theTeacher.jpg') center no-repeat;
+        background-size: cover;
+      }
+
       .color{
         background-color:white;
       }
@@ -60,7 +48,6 @@
       .banner-text{
         font-size: 45px;
         font-weight:bold;;
-
       }
       .heading{
         font-size: 45px;
@@ -70,7 +57,15 @@
         font-size: 26px;
         font-weight:lighter;
       }
-
+      .Mwidth-large{
+        width:75%;
+        margin:auto;
+      }
+      .Mwidth-large.heading{
+        width:75%;
+        margin:auto;
+        display: none;
+      }
       @media only screen and (max-width: 1200px) {
         .Mwidth{
           width:90%;
@@ -87,11 +82,22 @@
         .Mwidth{
           width:90%;
         }
+        .Mwidth{
+          width:98%;
+        }
         .heading{
           font-size: 30px;
         }
         .subheading{
           font-size: 16px;
+        }
+        .Mwidth-large.heading{
+          font-size: 25px;
+
+        }
+        .Mwidth-large.subheading{
+          font-size: 16px;
+
         }
       }
       </style>
@@ -100,18 +106,18 @@
 
 
 
-         <parallax-group id="group3 " z=1>
-           <parallax-layer layer=-2 class="image-customized" >
+         <!-- <parallax-group id="group3 " z=1>
+           <parallax-layer layer=-2 class="image-customized1" >
              <div class="title banner-text ">
                ABOUT US
              </div>
            </parallax-layer>
-         </parallax-group>
+         </parallax-group> -->
          <parallax-group id="group4" z=2>
            <parallax-layer >
              <div class="horizontal layout color" style="height:100%; width:100%;">
                <div class="flex self-center  color " style="text-align:center;">
-                 <div class="Mwidth">
+                 <div class="Mwidth-large">
                    <h3 class="heading">Our Philosophy</h3>
                    <p class="subheading">The Montessori philosophy is more than the materials in the classroom, or the teacher giving lessons. It is an attitude toward children,
                       a way of understanding their unique nature and allowing them to grow and develop to their fullest potential
@@ -132,7 +138,7 @@
 
 
          <parallax-group id="group3  " z=1>
-           <parallax-layer class="image-customized" layer=-1>
+           <parallax-layer class="image-customized2" layer=-1>
              <div class="title banner-text">
                Why Us?
              </div>
@@ -155,7 +161,7 @@
          </parallax-group>
 
          <parallax-group id="group3  " z=1>
-           <parallax-layer class="image-customized" layer=-1>
+           <parallax-layer class="image-customized3" layer=-1>
              <div class="title banner-text">
                The Child
              </div>
@@ -165,7 +171,7 @@
            <parallax-layer >
              <div class="horizontal layout color" style="height:100%; width:100%;">
                <div class="flex self-center  color " style="text-align:center;">
-                 <div class="Mwidth">
+                 <div class="Mwidth-large">
                      <!-- <h3 class="heading">Why Us?</h3> -->
 
                        <p class="subheading">  Like many other educational philosophers, Dr. Montessori believed that human beings pass through stages in their development. She called the first stage of life, from birth to six years, the stage of the absorbent mind. This is when children literally absorb impressions from their environment through the “pores” of all their senses as a sponge absorbs water. During this period, for example, children learn their mother tongue far more easily than an adult who struggles to learn a foreign language. The opportunities available in the environment will, therefore, be a major factor in determining the child’s intellect.
@@ -175,7 +181,7 @@
                        <p class="subheading">  Recent advances in child development have taught us the importance of respecting each child as an individual. Respect for the child was key to Dr. Montessori’s philosophy a century ago and still is today. She advocated respect for the child’s individuality by allowing freedom of choice of activity within a specially prepared environment, a natural and beautiful environment created to suit the nature of the child. The prepared environment allows each child the freedom to learn and develop at his own pace, according to his own capacities. Since the child chooses his own work, he is never pushed into something he is not ready for, or bored by something too elementary for him. In our classroom, we attempt to create a non-competitive environment where the child feels at home and can work according to his own tempo and unique nature. The teacher prepares the environment to meet the specific and ever-changing needs of the children in it. We respect the child’s inner rhythm when we allow repetition of activities and give him the time to work at his own pace. Only the child knows when he has satisfied his need for that activity, or has absorbed it. When we “follow the child,” as Dr. Montessori urged, we have the best chance of nurturing the child’s natural curiosity and love for knowledge.
                       </p>
                      <p class="subheading">    Independence is another cornerstone in a Montessori classroom. Independence is encouraged at every turn, whether it is putting on one’s own coat, choosing one’s own work, or cleaning up after oneself at the snack table. Each small step towards independence builds confidence, self-esteem, and a positive self-concept.
-
+                     </p>
 
                   </div>
                 </div>
@@ -185,9 +191,38 @@
 
 
          <parallax-group id="group3  " z=1>
-           <parallax-layer class="image-customized" layer=-1>
+           <parallax-layer class="image-customized4" layer=-1>
              <div class="title banner-text">
                The Environment
+             </div>
+           </parallax-layer>
+         </parallax-group>
+         <parallax-group id="group4" z=2>
+           <parallax-layer >
+             <div class="horizontal layout color" style="height:100%; width:100%;">
+               <div class="flex self-center  color " style="text-align:center;">
+                 <div class="Mwidth-large">
+                     <!-- <h3 class="heading">Environment</h3> -->
+
+                       <p class="subheading">  Like many other educational philosophers, Dr. Montessori believed that human beings pass through stages in their development. She called the first stage of life, from birth to six years, the stage of the absorbent mind. This is when children literally absorb impressions from their environment through the “pores” of all their senses as a sponge absorbs water. During this period, for example, children learn their mother tongue far more easily than an adult who struggles to learn a foreign language. The opportunities available in the environment will, therefore, be a major factor in determining the child’s intellect.
+                      </p>
+                       <p class="subheading">  Dr. Montessori believed that during these early years of development, the child passes through sensitive periods, or times when he becomes attuned to acquiring particular knowledge or skills. He will work on gaining that knowledge or skill with an interest and concentration he can never again display for that particular kind of work. Because the child learns more easily during these sensitive periods, Dr. Montessori developed specific didactic (learning) materials designed to correspond to these sensitive periods and to meet their needs. We all know well the 3-year-old’s desire for order in his environment and need for a daily routine. This is his sensitive period for order manifesting itself.
+                      </p>
+                       <p class="subheading">  Recent advances in child development have taught us the importance of respecting each child as an individual. Respect for the child was key to Dr. Montessori’s philosophy a century ago and still is today. She advocated respect for the child’s individuality by allowing freedom of choice of activity within a specially prepared environment, a natural and beautiful environment created to suit the nature of the child. The prepared environment allows each child the freedom to learn and develop at his own pace, according to his own capacities. Since the child chooses his own work, he is never pushed into something he is not ready for, or bored by something too elementary for him. In our classroom, we attempt to create a non-competitive environment where the child feels at home and can work according to his own tempo and unique nature. The teacher prepares the environment to meet the specific and ever-changing needs of the children in it. We respect the child’s inner rhythm when we allow repetition of activities and give him the time to work at his own pace. Only the child knows when he has satisfied his need for that activity, or has absorbed it. When we “follow the child,” as Dr. Montessori urged, we have the best chance of nurturing the child’s natural curiosity and love for knowledge.
+                      </p>
+                     <p class="subheading">    Independence is another cornerstone in a Montessori classroom. Independence is encouraged at every turn, whether it is putting on one’s own coat, choosing one’s own work, or cleaning up after oneself at the snack table. Each small step towards independence builds confidence, self-esteem, and a positive self-concept.
+                     </p>
+
+                  </div>
+                </div>
+              </div>
+           </parallax-layer>
+         </parallax-group>
+
+         <parallax-group id="group3  " z=1>
+           <parallax-layer class="image-customized5" layer=-1>
+             <div class="title banner-text">
+               The Teacher
              </div>
            </parallax-layer>
          </parallax-group>
@@ -198,15 +233,10 @@
                  <div class="Mwidth">
                      <!-- <h3 class="heading">Why Us?</h3> -->
 
-                       <p class="subheading">  Like many other educational philosophers, Dr. Montessori believed that human beings pass through stages in their development. She called the first stage of life, from birth to six years, the stage of the absorbent mind. This is when children literally absorb impressions from their environment through the “pores” of all their senses as a sponge absorbs water. During this period, for example, children learn their mother tongue far more easily than an adult who struggles to learn a foreign language. The opportunities available in the environment will, therefore, be a major factor in determining the child’s intellect.
-                      </p>
-                       <p class="subheading">  Dr. Montessori believed that during these early years of development, the child passes through sensitive periods, or times when he becomes attuned to acquiring particular knowledge or skills. He will work on gaining that knowledge or skill with an interest and concentration he can never again display for that particular kind of work. Because the child learns more easily during these sensitive periods, Dr. Montessori developed specific didactic (learning) materials designed to correspond to these sensitive periods and to meet their needs. We all know well the 3-year-old’s desire for order in his environment and need for a daily routine. This is his sensitive period for order manifesting itself.
-                      </p>
-                       <p class="subheading">  Recent advances in child development have taught us the importance of respecting each child as an individual. Respect for the child was key to Dr. Montessori’s philosophy a century ago and still is today. She advocated respect for the child’s individuality by allowing freedom of choice of activity within a specially prepared environment, a natural and beautiful environment created to suit the nature of the child. The prepared environment allows each child the freedom to learn and develop at his own pace, according to his own capacities. Since the child chooses his own work, he is never pushed into something he is not ready for, or bored by something too elementary for him. In our classroom, we attempt to create a non-competitive environment where the child feels at home and can work according to his own tempo and unique nature. The teacher prepares the environment to meet the specific and ever-changing needs of the children in it. We respect the child’s inner rhythm when we allow repetition of activities and give him the time to work at his own pace. Only the child knows when he has satisfied his need for that activity, or has absorbed it. When we “follow the child,” as Dr. Montessori urged, we have the best chance of nurturing the child’s natural curiosity and love for knowledge.
-                      </p>
-                     <p class="subheading">    Independence is another cornerstone in a Montessori classroom. Independence is encouraged at every turn, whether it is putting on one’s own coat, choosing one’s own work, or cleaning up after oneself at the snack table. Each small step towards independence builds confidence, self-esteem, and a positive self-concept.
-
-
+                       <p class="subheading">The role of the teacher (or directress, as Dr. Montessori called her) in the classroom is manifold. Her most important job is to foster a kind of learning that satisfies the child’s need to learn for its own sake, not to please others or receive praise. She is trained to observe carefully, to know the different needs of her children and to provide a properly prepared environment for the children’s maximum growth. She demonstrates the correct use of the materials, and guides without interfering with the child’s experience. She ensures that each child progresses through the activities of each curriculum area in the classroom. She sets limits, encourages the hesitant child, diverts the child that has chosen work too difficult, and keeps enthusiasm alive. She is there when needed, but “invisible” when not needed. In other words, she follows the child.
+                           </p>
+                        <p class="subheading">Dr. Montessori believed that learning is individual -- each child is encouraged to learn for himself -- and that children are motivated to learn by a natural curiosity and a love for knowledge. Therefore, early childhood education should cultivate the child’s own natural desire to learn -- to teach him how to learn. The Montessori Method develops a lifelong love of learning in every child.
+                          </p>
                   </div>
                 </div>
               </div>
