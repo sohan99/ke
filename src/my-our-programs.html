@@ -10,30 +10,76 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="program-layer.html" >
+<link rel="import" href="program-kid.html" >
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 
 
 <dom-module id="my-our-programs">
-
+<style include="iron-flex iron-flex-alignment"></style>
   <template>
 
     <style>
       :host {
         display: block;
         /*padding: 10px;*/
+        height:100%;
       }
 
     </style>
-
-
 
     <!-- flex content ends here -->
 
 
     <!--cards here-->
+<div class="vertical layout" style="height:500%;">
 
-  some content
+  <program-kid class="flex" img-src="src/KIDS_PIC/child01.svg"
+  heading="Play Group"
+  subheading="1.5 years to 2.5 years"
+  quote="No amount of higher education can cancel what has once been formed in infancy."
+  quoteby="– Dr. Maria Montessori"
+  tags="Sensory and Perception skills, Self-help and development, Understanding of Language, Physical and Motor Skills, Social and Emotional Growth"
+  ></program-kid>
 
-  </template>
+  <program-kid class="flex" img-src="src/KIDS_PIC/childs02_1.svg"
+  heading="Montessori I"
+  subheading="2.5 - 3.5 years"
+  quote="The period under six is decisive. What ever abilities the child constructs  they will remain incarnate in him for life."
+  quoteby="– Dr. Maria Montessori"
+  tags="Science and Nature, Music and Movement, Sensorial, Cooking and Nutrition, Cultural Awareness, History, Geography, Language Arts, Mathematics"
+  ></program-kid>
+
+  <program-kid class="flex" img-src="src/KIDS_PIC/childs02.svg"
+  heading="Montessori II"
+  subheading="3.5 - 4.5 years"
+  quote="The secret of good teaching is to regard the child’s intelligence as a fertile field in which seeds may be sown, to grow under the heat of flaming imagination. Our aim therefore is not merely to make the child understand and still less force him to memorize, but so to touch his imagination to enthuse him to his innermost core"
+  quoteby="– Dr. Maria Montessori"
+  tags="Language Arts, Mathematics, Social Studies, Geometry, Science, Art, Music"
+  ></program-kid>
+
+  <program-kid class="flex" img-src="src/KIDS_PIC/kid1_1.svg"
+  heading="Montessori III"
+  subheading="4.5 - 5.5 years"
+  quote="The secret of good teaching is to regard the child’s intelligence as a fertile field in which seeds may be sown, to grow under the heat of flaming imagination. Our aim therefore is not merely to make the child understand and still less force him to memorize, but so to touch his imagination to enthuse him to his innermost core."
+  quoteby="– Dr. Maria Montessori"
+  tags="Language, Math, Science, Hindi, General Knowledge, Environment Studies, Social, Emotional, Cognitive Aesthetic/Creative Expression"
+  ></program-kid>
+
+  <program-kid class="flex" img-src="src/KIDS_PIC/kids_magic_book.svg"
+  heading="Day Care"
+  subheading="4.5 - 5.5 years"
+  quote="Our daycare has a structured program which encourages each child to realize ‘I am’ and expand to ‘I can’"
+  quoteby="– Dr. Maria Montessori"
+  tags="The activities are based on their developmental milestones wherein we try to engage each child at physical, mental and socio emotional level. We also conduct sessions on music/dance/drama/art and craft to enhance their aesthetic sense.We greatly emphasize the need for hygiene, safety and cleanliness especially when young children spend most of their time with us, and in furtherance of the same goal, we provide lead free washable beds, non-toxic plastic trays and child friendly furniture amongst other things."
+  ></program-kid>
+
+
+
+
+
+
+</div>
+</template >
 
   <script>
 
