@@ -19,6 +19,7 @@
  <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
  <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
  <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+ <link rel="import" href="../bower_components/paper-menu/paper-menu.html">
  <link rel="import" href="../bower_components/paper-styles/color.html">
  <link rel="import" href="../bower_components/paper-styles/typography.html">
  <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html" >
@@ -125,6 +126,8 @@
              <paper-tab link name="about-us"><a href="/about-us" class="home" tabindex="-1">ABOUT</a> </paper-tab>
              <paper-tab link name="our-programs"><a href="/our-programs" class="home" tabindex="-1">PROGRAMS</a> </paper-tab>
              <paper-tab link name="maria-montessori"><a href="/maria-montessori" class="home" tabindex="-1">MONTESSORI</a> </paper-tab>
+
+
              <paper-tab link name="home"><a href="/home" class="home" tabindex="-1">MISSION </a> </paper-tab>
              <paper-tab link name="home"><a href="/home" class="home" tabindex="-1">GALLERY</a> </paper-tab>
              <paper-tab link name="home"><a href="/home" class="home" tabindex="-1">CONTACT</a> </paper-tab>
@@ -171,7 +174,7 @@
        ],
 
        _routePageChanged: function(page) {
-         this.page = page || 'view1';
+         this.page = page || 'home';
        },
 
        _pageChanged: function(page) {
