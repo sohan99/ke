@@ -1,0 +1,40 @@
+
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/google-map/google-map.html" >
+ <!-- <link rel="import" href="../ower_components/google-map/google-map-marker.html"> -->
+
+<dom-module id="my-contact-us">
+
+<template >
+  <style>
+  :host{
+    display:block;
+    height:100%;
+  }
+  google-map {
+    height: 600px;
+    width:700px;
+  }
+  </style>
+  <div>
+  <google-map latitude="37.77493" longitude="-122.41942" fit-to-markers>
+    <!-- <google-map-marker latitude="37.779" longitude="-122.3892" -->
+        draggable="true" title="Go Giants!"></google-map-marker>
+    <google-map-marker latitude="37.777" longitude="-122.38911"></google-map-marker>
+  </google-map>
+</template >
+
+</div>
+
+  <script>
+
+    Polymer({
+
+      is: 'my-contact-us'
+    });
+
+  </script>
+
+</dom-module>
