@@ -12,7 +12,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../bower_components/iron-collapse/iron-collapse.html">
 <link href="../bower_components/paper-card/paper-card.html" rel="import">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="faq-paper.html">
+
 
 
 <dom-module id="my-faqs-colaps">
@@ -40,23 +43,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .heading{
         width:100%;
         font-size:35px;
-        /*text-align: center;*/
         font-weight: lighter;
         margin-left: 10%;
       }
       .subheading{
         font-size:24px;
         font-weight:lighter;
-        /*text-align: center;*/
         margin-left: 10%;
 
       }
       .feelfree{
         margin:auto;
-        /*text-align:center;*/
         margin:1% 5% 0.5% 10%;
-
-
+      }
+      a{
+        text-decoration:none;
+        color:#49ad65;
       }
       @media screen and (max-width: 800px) {
         faq-paper{
@@ -146,13 +148,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <faq-paper question="Do children have difficulty transitioning to a public school after going to a Montessori school?" answer="
       Moving from a Montessori school to another school setting is an issue often raised by parents and family members. Happily, the habits and skills a child develops in a Montessori class last a lifetime and stand a child in good stead no matter where they go. Montessori children tend to be adaptable, working well alone or with a group. They have solid decision-making skills, practical problem solving abilities, and generally manage their time well. Since children in a Montessori classroom are also encouraged to share ideas and discuss their work, fitting into new situations is made easier thanks to good communication skills.
       "></faq-paper>
-      <div style="height:100% width:100%;">
-        <p class=" subheading feelfree">
-        Feel free to drop a message for any query related to your child.<br/>
-          <a name="contact-us" href="contact-us">CONTACT US</a>
-        </p>
 
-      </div>
+        <p class=" subheading feelfree">
+        Feel free to drop a message for any query related to your child.
+        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+          <a name="contact-us" href="/contact-us">Contact us!!</a>
+       </iron-selector>
+        </p>
 
 </template >
 
@@ -160,13 +162,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     Polymer({
 
-      is: 'my-faqs-colaps',
-      _toggleCollapse: function(e) {
-        if (!e.target.classList.contains('card-content')) {
-          console.log(this.children);
-         this.$.collapse.toggle();
-        }
-	     }
+      is: 'my-faqs-colaps'
     });
 
   </script>

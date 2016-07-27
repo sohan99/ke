@@ -3,36 +3,173 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../bower_components/google-map/google-map.html" >
- <!-- <link rel="import" href="../ower_components/google-map/google-map-marker.html"> -->
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-icons/image-icons.html">
 
+
+ <!-- <link rel="import" href="../ower_components/google-map/google-map-marker.html"> -->
 <dom-module id="my-contact-us">
+<style include="iron-flex iron-flex-alignment"></style>
 
 <template >
   <style>
   :host{
     display:block;
-    height:100%;
+    /*height:100%;*/
+    width:100%;
+
   }
   google-map {
-    height: 600px;
-    width:700px;
+    height: 100%;
+    width:100%;
   }
+  .box{
+    /*width:30%;
+    height:100%;*/
+    /*opacity: 0.8;*/
+    max-width:600px;
+    min-width:300px;
+    margin-top:20px;
+  }
+
+  google-map{
+    width:[[width]];
+    min-height:[[minh]];
+    max-height:[[maxh]];
+    position :[[pos]];
+    margin:auto;
+    /*top:0;*/
+    /*z-index:-1;*/
+    cursor:pointer;
+  }
+
+  .opacity{
+    opacity: 0.91;
+  }
+
+  .loweropacity{
+    opacity: 0.58;
+  }
+  .card-title{
+    font-size: 24px;
+    font-weight: 300;
+    line-height: normal;
+    color: black;
+    height: auto;
+    margin:0;padding:0;
+    padding: 5px 16px;
+    opacity: 0.75;
+
+  }
+
+  @media screen and (max-width: 760px) {
+    :host{
+      height:100%;
+    }
+    google-map{
+      height:40%;
+      min-height:40%;
+      position :relative;;
+      /*top:0;*/
+      /*z-index:-1;*/
+      cursor:pointer;
+    }
+  }
+
   </style>
-  <div>
-  <google-map latitude="37.77493" longitude="-122.41942" fit-to-markers>
+
+  <google-map   latitude="37.77493" longitude="-122.41942" fit-to-markers>
     <!-- <google-map-marker latitude="37.779" longitude="-122.3892" -->
-        draggable="true" title="Go Giants!"></google-map-marker>
+        <!-- draggable="true" title="Go Giants!"></google-map-marker> -->
     <google-map-marker latitude="37.777" longitude="-122.38911"></google-map-marker>
   </google-map>
+
+
+  <div class="layout around-justified horizontal wrap " >
+       <div class=" box" >
+         <paper-card class="box opacity" >
+           <!-- <img width="100%" src="cards_icon/Admissions_Challenge.jpg"/> -->
+           <h4 class="card-title">Drop us your query.</h4>
+             <div class="card-content">
+                 or just say HI!
+                 <paper-input  error-message="Invalid input!" label="My Name is ">
+                   <iron-icon  class="loweropacity" icon="face" prefix stle="margin-right:10px;"></iron-icon>
+                 </paper-input>
+                 <paper-input error-message="Invalid Email" label="My Email" style="min-height:100px;">
+                     <iron-icon  class="loweropacity" icon="mail" prefix></iron-icon>
+                 </paper-input>
+
+
+
+
+                <paper-textarea char-counter label="How can we help you!?" no-label-float>
+
+                  <iron-icon class="loweropacity" suffix  icon="clear" alt="clear" title="clear">
+                  </iron-icon>
+
+                </paper-textarea>
+
+             </div>
+
+             <div class="card-actions" >
+               <paper-button style="text-align:right;"> Send <iron-icon icon="send" suffix></iron-icon></paper-button>
+             </div>
+           </paper-card>
+
+       </div>
+       <div class="box" >
+         <paper-card class="box opacity" >
+           <!-- <img width="100%" src="cards_icon/Admissions_Challenge.jpg"/> -->
+           <h4 class="card-title">Get in Touch</h4>
+             <div class="card-content" style="text-align:center;">
+                <p>+91 9916879333, +91 9620585857<br/>
+
+               Eden Club Road<br/>
+               Near Eden Enclave Layout<br/>
+               Nanthoor<br/>
+               Mangalore – 575005<br/>
+              kidzeden@gmail.com<br/>
+            </p>
+
+
+
+             </div>
+             <!-- <div class="card-actions">
+               <paper-button>Get Answers</paper-button>
+             </div> -->
+           </paper-card>
+       </div>
+
+
+
+       <!-- Get in Touch
+contact_phone +91 9916879333, +91 9620585857
+
+ Eden Club Road
+Near Eden Enclave Layout
+Nanthoor
+Mangalore – 575005
+kidzeden@gmail.com -->
+     </div>
+
 </template >
 
-</div>
+
 
   <script>
 
     Polymer({
 
       is: 'my-contact-us'
+      // clearInput: : function(e){
+      //
+      //   // this.$.query.
+      // }
     });
 
   </script>
