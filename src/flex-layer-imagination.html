@@ -1,39 +1,39 @@
 <!-- flex-layer-imagination -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/paper-material/paper-material.html" >
-<link rel="import" href="../bower_components/iron-image/iron-image.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
-<link rel="import" href="../bower_components/paper-ripple/paper-ripple.html" >
+<link rel="import" href="../bower_components/paper-styles/color.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
 
 <dom-module id="flex-layer-imagination">
-<style media="screen">
-  @font-face {
 
-    font-weight: 100;
-  }
-</style>
   <template>
     <style include="iron-flex iron-flex-alignment"></style>
     <style >
+      p{
+        padding:0;margin:0;
+      }
       .container {
-            background-image: url([[bimage]]);
-            height:70%;
-            background-size: cover ;
-            background-repeat: no-repeat;
-            background-position: center;
+          background-image: url([[bimage]]);
+          /*height:70%;*/
+          background-size: cover ;
+          background-repeat: no-repeat;
+          background-position: center;
       }
 
 
       .banner-text{
         width: 100%;
-        font-family: "Roboto","Helvetica","Arial",sans-serif;
-        font-size: 45px;
-        font-weight: lighter;
+        margin-top:30%;
         background-color: rgba(55, 71, 79 ,0.8);
         text-align: left;
         color: white;
+        line-height: 40px;
+      }
 
+      .wigth{
+        font-weight: 100;
+        /*line-height: normal;*/
       }
 
       .padding-text{
@@ -41,29 +41,40 @@
         margin-left:35%;
 
       }
+      .heading{
+        font-size: 45px;
+      }
       .subheading{
         font-size: 24px;
+        opacity:0.8;
+        margin: 10px;
       }
       .color{
         text-decoration: none;
         color: #64ffda;
-        font-size: 16px;
+        font-size: 21px;
       }
-      p{
-        padding:0;margin:0;
-      }
+
       @media screen and (max-height: 568px), screen and (max-width: 700px) {
           .padding-text{
             margin-left:20px;
           }
+          .heading{
+              font-size: 27px;
+              opacity:0.9;
+          }
+
+            .subheading{
+              font-size: 21px;
+            }
         }
       </style>
 
     <div class="container fit layout horizontal end ">
       <div class="banner-text"  >
         <div class="padding-text">
-          <p class=" logo-font  margin-top" > {{heading}} </p>
-          <p class=" logo-font subheading ">{{content}}</p>
+          <p class="  heading margin-top wigth" > {{heading}} </p>
+          <p class="subheading wigth">{{content}}</p>
           <div class="" >  <p class="color  subheading" > <a> Our Mission &amp Values  </a> </p></div>
         </div>
       </div>

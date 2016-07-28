@@ -15,7 +15,7 @@
     <style >
       .container {
             background-image: url([[bimage]]);
-            height:[[h]];
+            /*height:[[h]];*/
             background-size: cover ;
             background-repeat: no-repeat;
             background-position: center;
@@ -29,11 +29,11 @@
       .logo-font {
             font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
             line-height: 1;
-            font-weight: 600;
+            font-weight: 100;
             font-size: 60px;
       }
       .sub-slogan{
-        padding-top: 24px;
+        /*padding-top: 24px;*/
         font-size: 21px;
       }
       .create-character a {
@@ -42,29 +42,33 @@
         cursor:pointer;
       }
       .margin-top{
-        margin-top:[[margin-top]];
+        /*margin-top:[[margin-top]];*/
+      }
+      .btn-link{
+        color:#38a742;
+        .font-weight:lighter
       }
       @media screen and (max-height: 568px), screen and (max-width: 700px) {
           body {
               background-color: lightgreen;
           }
-          .logo-font {font-size:30px;}
-          .sub-slogan{font-size:15px;}
+          .logo-font {font-size:32px;}
+          .sub-slogan{font-size:19px;width:70%;margin:auto;text-align:center}
           .create-character a {font-size:17px;}
           .margin-top{
-            margin-top:[[margin-top-mediaq]];
+            /*margin-top:[[margin-top-mediaq]];*/
           }
         }
       </style>
 
-    <div class="container fit layout vertical center-justified">
+    <div class="container fit layout vertical center-justified" style="min-height:60%;">
       <div class="self-center margin-top"  >
           <p class=" vertical layout center logo-font color margin-top" > {{heading}} </p>
           <p class="vertical layout center logo-font sub-slogan color">{{content}}</p>
       </div>
       <div class="horizontal center-justified layout" >  <p class="color create-character " >
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-         <a name="aboutus" href="/about-us"> {{ltext}} </a>
+         <a class="btn-link" name="aboutus" href="/about-us"> {{ltext}} </a>
        </iron-selector>
 
 

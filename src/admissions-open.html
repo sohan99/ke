@@ -1,0 +1,151 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/neon-animation/animations/scale-up-animation.html">
+<link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html">
+
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+<link rel="import" href="../bower_components/iron-dropdown/iron-dropdown.html" >
+
+<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html" >
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+
+<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu-light.html">
+
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-input/paper-textarea.html">
+
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-icons/image-icons.html">
+
+<dom-module id="admissions-open">
+  <template>
+    <style include="iron-flex iron-flex-alignment"></style>
+
+    <style>
+    :host{
+      height:100%;
+      width:100%;
+    }
+    .btn{
+      z-index: 2;
+      position:fixed;
+      bottom:0;
+      right:0;
+    }
+
+    paper-dialog{
+      height:100%;
+      width:100%;
+      overflow:scroll;
+
+    }
+    .smaller-p{
+      font-size:80%;
+      margin:0;
+    }
+
+    h2, p, paper-input, paper-dropdown{
+      font-weight:lighter;
+
+    }
+    iron-icon{
+      opacity:0.5;
+    }
+
+    </style>
+
+    <paper-dialog id="animated" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+
+      <div class="horizontal around-justified layout " style="height:100%;">
+      <div class=" self-center" style="margin:auto;min-width:350px;">
+                <h2>Admissions Enquiry</h2>
+            <paper-input  error-message="Invalid input!" label="Your Name ">
+              <iron-icon  class="loweropacity" icon="face" prefix ></iron-icon>
+            </paper-input>
+            <paper-input error-message="Invalid Email" label="Your Email" >
+                <iron-icon  class="loweropacity" icon="mail" prefix></iron-icon>
+            </paper-input>
+
+            <paper-input error-message="Invalid Phone Number" label="Your 10 digit Phone Number" >
+                <iron-icon  class="loweropacity" icon="mail" prefix></iron-icon>
+            </paper-input>
+
+            <paper-dropdown-menu label="Child Age Group">
+            <paper-listbox class="dropdown-content"  attr-for-selected="file" selected="non-existing"
+                           fallback-selection="default">
+                <paper-item file="1"><b>PlayGroup</b> <p class="smaller-p"> <br/> 1.5-2.5 years </p></paper-item>
+                <paper-item file="2"><b>Montessori I</b> <p class="smaller-p"> <br/> 2.5-3.5 years</p></paper-item>
+                <paper-item file="3"><b>Montessori II</b><p class="smaller-p"> <br/> 3.5-4.5 years</p></paper-item>
+                <paper-item file="default"><b>Montessori III</b><p class="smaller-p"> <br/> 4.5-5.5 years</p></paper-item>
+                <paper-item file="4"><b>DAY CARE</b> <p class="smaller-p"> <br/> above 2 years</p></paper-item>
+                </paper-listbox>
+            </paper-dropdown-menu>
+
+
+            <paper-input error-message="Invalid State" label="State" >
+                <iron-icon  class="loweropacity" icon="place" prefix></iron-icon>
+            </paper-input>
+
+            <paper-input error-message="Invalid City" label="City" >
+                <iron-icon  class="loweropacity" icon="add-location" prefix></iron-icon>
+            </paper-input>
+
+            <paper-textarea  label="Your Address" no-label-float>
+
+              <iron-icon class="loweropacity" suffix style="padding:10px;" icon="clear" alt="clear" title="clear">
+              </iron-icon>
+
+            </paper-textarea>
+
+            <paper-textarea char-counter label="Leave your comment bellow" no-label-float>
+
+              <iron-icon class="loweropacity" suffix style="padding:10px;" icon="clear" alt="clear" title="clear">
+              </iron-icon>
+
+            </paper-textarea>
+            <paper-button style="text-align:right;"> Enquire Now <iron-icon icon="send" suffix></iron-icon></paper-button>
+            <paper-button style="text-align:right;" on-tap="_close"> close <iron-icon icon="close" suffix></iron-icon></paper-button>
+
+    </div>
+    </div>
+
+
+
+
+
+
+</paper-dialog>
+
+
+
+
+    <paper-button class="btn" raised on-tap="_call">ADMISSIONS</paper-button>
+
+    </template>
+
+  <script>
+    Polymer({
+      is: 'admissions-open',
+      _call:function(){
+        this.$.animated.open();
+      },
+      _close:function(){
+        this.$.animated.close();
+      }
+    });
+  </script>
+
+</dom-module>

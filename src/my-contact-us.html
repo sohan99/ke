@@ -11,8 +11,6 @@
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/iron-icons/image-icons.html">
 
-
- <!-- <link rel="import" href="../ower_components/google-map/google-map-marker.html"> -->
 <dom-module id="my-contact-us">
 <style include="iron-flex iron-flex-alignment"></style>
 
@@ -20,8 +18,8 @@
   <style>
   :host{
     display:block;
-    /*height:100%;*/
     width:100%;
+    margin:auto;
 
   }
   google-map {
@@ -29,9 +27,7 @@
     width:100%;
   }
   .box{
-    /*width:30%;
-    height:100%;*/
-    /*opacity: 0.8;*/
+
     max-width:600px;
     min-width:300px;
     margin-top:20px;
@@ -64,9 +60,10 @@
     margin:0;padding:0;
     padding: 5px 16px;
     opacity: 0.75;
-
   }
-
+  .btn-color{
+    color:#38a742;
+  }
   @media screen and (max-width: 760px) {
     :host{
       height:100%;
@@ -103,21 +100,16 @@
                  <paper-input error-message="Invalid Email" label="My Email" style="min-height:100px;">
                      <iron-icon  class="loweropacity" icon="mail" prefix></iron-icon>
                  </paper-input>
-
-
-
-
                 <paper-textarea char-counter label="How can we help you!?" no-label-float>
 
                   <iron-icon class="loweropacity" suffix  icon="clear" alt="clear" title="clear">
                   </iron-icon>
 
                 </paper-textarea>
-
              </div>
 
-             <div class="card-actions" >
-               <paper-button style="text-align:right;"> Send <iron-icon icon="send" suffix></iron-icon></paper-button>
+             <div class="card-actions " >
+               <paper-button class="btn-color" > Send <iron-icon icon="send" suffix></iron-icon></paper-button>
              </div>
            </paper-card>
 
