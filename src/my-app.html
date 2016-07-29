@@ -81,6 +81,10 @@
           }
           paper-tab[link]{
             padding: 0 16px;
+            --paper-tabs-selection-bar-color: --paper-teal-a400;
+          }
+          paper-tab {
+            --paper-tabs-selection-bar-color: --paper-teal-a400;
           }
      </style>
 
@@ -119,20 +123,21 @@
              <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
 
              <div title>KIDZ EDEN</div>
+             <paper-tabs selected="[[page]]" attr-for-selected="name" scrollable  sticky style="min-width:70%;float:right;" fit-container="true">
+               <paper-tab link name="home"><a href="/home" class="home" tabindex="-1">HOME</a> </paper-tab>
+               <paper-tab link name="about-us"><a href="/about-us" class="home" tabindex="-1">ABOUT</a> </paper-tab>
+               <paper-tab link name="our-programs"><a href="/our-programs" class="home" tabindex="-1">PROGRAMS</a> </paper-tab>
+               <paper-tab link name="maria-montessori"><a href="/maria-montessori" class="home" tabindex="-1">MONTESSORI</a> </paper-tab>
+               <paper-tab link name="mission"><a href="/mission" class="home" tabindex="-1">MISSION </a> </paper-tab>
+               <paper-tab link name="gallery"><a href="/gallery" class="home" tabindex="-1">GALLERY</a> </paper-tab>
+               <paper-tab link name="contact-us"><a href="/contact-us" tabindex="-1">CONTACT</a> </paper-tab>
+               <paper-tab link name="faqs-colaps"><a href="/faqs-colaps" class="faqs-colaps" tabindex="-1">FAQS</a> </paper-tab>
+               <paper-tab link name="home"><a href="/home" class="home" tabindex="-1">MORE</a> </paper-tab>
+             </paper-tabs>
 
 
            </app-toolbar>
-           <paper-tabs selected="[[page]]" attr-for-selected="name" scrollable  sticky>
-             <paper-tab link name="home"><a href="/home" class="home" tabindex="-1">HOME</a> </paper-tab>
-             <paper-tab link name="about-us"><a href="/about-us" class="home" tabindex="-1">ABOUT</a> </paper-tab>
-             <paper-tab link name="our-programs"><a href="/our-programs" class="home" tabindex="-1">PROGRAMS</a> </paper-tab>
-             <paper-tab link name="maria-montessori"><a href="/maria-montessori" class="home" tabindex="-1">MONTESSORI</a> </paper-tab>
-             <paper-tab link name="mission"><a href="/mission" class="home" tabindex="-1">MISSION </a> </paper-tab>
-             <paper-tab link name="gallery"><a href="/gallery" class="home" tabindex="-1">GALLERY</a> </paper-tab>
-             <paper-tab link name="contact-us"><a href="/contact-us" tabindex="-1">CONTACT</a> </paper-tab>
-             <paper-tab link name="faqs-colaps"><a href="/faqs-colaps" class="faqs-colaps" tabindex="-1">FAQS</a> </paper-tab>
-             <paper-tab link name="home"><a href="/home" class="home" tabindex="-1">MORE</a> </paper-tab>
-           </paper-tabs>
+
          </app-header>
 
          <iron-pages role="main" selected="[[page]]" attr-for-selected="name">
