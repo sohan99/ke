@@ -64,6 +64,18 @@
     iron-icon{
       opacity:0.5;
     }
+    .btn{
+      background-color: deeppink;
+      color: antiquewhite;
+      margin: 20px;
+      font-weight: bold;
+  }
+  .btn-modal{
+    background-color: #d6d6d6;
+    color: #54524e;
+    margin: 20px;
+    font-weight: bold;
+  }
 
     </style>
 
@@ -73,17 +85,17 @@
       <div class=" self-center" style="margin:auto;min-width:350px;">
                 <h2>Admissions Enquiry</h2>
             <paper-input  error-message="Invalid input!" label="Your Name ">
-              <iron-icon  class="loweropacity" icon="face" prefix ></iron-icon>
+              <!-- <iron-icon  class="loweropacity" icon="face" prefix ></iron-icon> -->
             </paper-input>
             <paper-input error-message="Invalid Email" label="Your Email" >
-                <iron-icon  class="loweropacity" icon="mail" prefix></iron-icon>
+                <!-- <iron-icon  class="loweropacity" icon="mail" prefix></iron-icon> -->
             </paper-input>
 
             <paper-input error-message="Invalid Phone Number" label="Your 10 digit Phone Number" >
-                <iron-icon  class="loweropacity" icon="mail" prefix></iron-icon>
+                <!-- <iron-icon  class="loweropacity" icon="mail" prefix></iron-icon> -->
             </paper-input>
 
-            <paper-dropdown-menu label="Child Age Group">
+            <paper-dropdown-menu label="Child Age Group" style="width:100%;">
             <paper-listbox class="dropdown-content"  attr-for-selected="file" selected="non-existing"
                            fallback-selection="default">
                 <paper-item file="1"><b>PlayGroup</b> <p class="smaller-p"> <br/> 1.5-2.5 years </p></paper-item>
@@ -96,11 +108,11 @@
 
 
             <paper-input error-message="Invalid State" label="State" >
-                <iron-icon  class="loweropacity" icon="place" prefix></iron-icon>
+                <!-- <iron-icon  class="loweropacity" icon="place" prefix></iron-icon> -->
             </paper-input>
 
             <paper-input error-message="Invalid City" label="City" >
-                <iron-icon  class="loweropacity" icon="add-location" prefix></iron-icon>
+                <!-- <iron-icon  class="loweropacity" icon="add-location" prefix></iron-icon> -->
             </paper-input>
 
             <paper-textarea  label="Your Address" no-label-float>
@@ -116,8 +128,8 @@
               </iron-icon>
 
             </paper-textarea>
-            <paper-button style="text-align:right;"> Enquire Now <iron-icon icon="send" suffix></iron-icon></paper-button>
-            <paper-button style="text-align:right;" on-tap="_close"> close <iron-icon icon="close" suffix></iron-icon></paper-button>
+            <paper-button style="text-align:right;" class="btn-modal"> Enquire Now <iron-icon icon="send" suffix></iron-icon></paper-button>
+            <paper-button style="text-align:right;" on-tap="_close" class="btn-modal"> close <iron-icon icon="close" suffix></iron-icon></paper-button>
 
     </div>
     </div>
@@ -132,7 +144,7 @@
 
 
 
-    <paper-button class="btn" raised on-tap="_call">ADMISSIONS</paper-button>
+    <paper-button class="btn" raised on-tap="_call" on-click="_call">ADMISSIONS</paper-button>
 
     </template>
 

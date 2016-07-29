@@ -1,7 +1,10 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/paper-material/paper-material.html" >
+<!-- <link rel="import" href="../bower_components/paper-material/paper-material.html" > -->
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 
 
 
@@ -59,17 +62,38 @@
         margin:auto;
         cursor: pointer;
         color:#38a742;
+        
+      }
+      a {
+
+        /*font-size:21px;*/
+        cursor:pointer;
       }
       </style>
 
     <div class="container" >
       <p class="heading">Our Programs</p>
       <div style="    overflow-x:scroll; " class="layout a horizontal" >
-        <div class="mm"><img class="box" src="KIDS_PIC/child01.svg"> <p>Play Group</p> <p>1.5 years to 2.5 years</p></div>
-        <div class="mm"><img class="box" src="KIDS_PIC/childs02_1.svg"> <p>Montessori I:</p> <p>2.5 - 3.5 years</p></div>
+        <!-- <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation"> -->
+          <a class="mm" name="our-programs" href="/our-programs#1">
+            <div ><img class="box" src="KIDS_PIC/child01.svg"> <p>Play Group</p> <p>1.5 years to 2.5 years</p></div>
+          </a>
+
+           <a class="mm" name="our-programs" href="/our-programs#2">
+              <div ><img class="box" src="KIDS_PIC/childs02_1.svg"> <p>Montessori I:</p> <p>2.5 - 3.5 years</p></div>
+          </a>
+          <a class="mm" name="our-programs" href="/our-programs#3">
         <div class="mm"><img  class="box" src="KIDS_PIC/childs02.svg"> <p>Montessori II:</p> <p>3.5 - 4.5 years</p></div>
+        </a>
+
+        <a class="mm" name="our-programs" href="/our-programs#4">
         <div class="mm"><img  class="box" src="KIDS_PIC/kid1_1.svg"> <p>Montessori III:</p> <p>4.5 - 5.5 years</p></div>
+        </a>
+
+        <a class="mm" name="our-programs" href="/our-programs#5">
         <div class="mm"><img  class="box" src="KIDS_PIC/kids_magic_book.svg"> <p>Day Care</p> </div>
+        </a>
+         <!-- </iron-selector> -->
       </div>
     </div>
 
