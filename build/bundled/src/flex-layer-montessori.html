@@ -1,0 +1,26 @@
+<html><head><link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/paper-ripple/paper-ripple.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+
+</head><body><dom-module id="flex-layer-montessori">
+
+  <template>
+    <style include="iron-flex iron-flex-alignment"></style>
+
+    <style is="custom-style">.color{color:rgba(0,0,0,.87);}.logo-font{font-weight:100;opacity:.6;font-size:34px;line-height:40px;}.sub-slogan{padding-top:24px;font-size:21px;width:60%;line-height:40px;text-align:center;}.create-character a{text-decoration:none;font-size:21px;cursor:pointer;opacity:.5;}.image-customized{background:url('cards_icon/kids_in_school.jpg') center no-repeat;background-size:cover;width:100%;height:60%;}@media screen and (max-width: 900px){.sub-slogan{width:98%;}}.btn-link{color:#38a742;}</style>
+    <div class="container fit layout vertical center-justified">
+      <div class="self-center margin-top">
+          <p class="horizontal center-justified layout logo-font color margin-top"> {{heading}} </p>
+          <div class="horizontal center-justified layout"><p class="logo-font sub-slogan color">{{content}}</p></div>
+      </div>
+      <div class="horizontal center-justified layout">  <p class="color create-character btn-link"> <a href="/maria-montessori" name="maria-montessori" class="btn-link"> More on Montessori School </a> </p></div>
+    </div>
+  <div class="image-customized"></div>
+  </template>
+
+  <script>Polymer({is:"flex-layer-montessori",properties:{route:Object}});</script>
+</dom-module>
+</body></html>

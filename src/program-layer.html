@@ -1,5 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<!-- <link rel="import" href="../bower_components/paper-material/paper-material.html" > -->
+<link rel="import" href="../bower_components/paper-material/paper-material.html" >
 <link rel="import" href="../bower_components/iron-image/iron-image.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 
@@ -15,12 +15,14 @@
     <style include="iron-flex iron-flex-alignment"></style>
     <style >
       .container {
-            margin:20px;
+            padding:20px;
             background-color: white;
             width:100%;
             overflow:hidden;
+            margin-top:2px;
       }
-      .heading {   font-family: "Roboto","Helvetica","Arial",sans-serif;
+      .heading {
+          font-family: "Roboto","Helvetica","Arial",sans-serif;
           font-size: 34px;
           font-weight: 100;
           line-height: 40px;
@@ -28,9 +30,6 @@
       }
       p{
         opacity: .7;
-      }
-
-      p{
         text-align: center;
       }
       .box {
@@ -43,7 +42,6 @@
       .box::after {
 
         z-index: -1;
-
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         opacity: 0;
         -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -62,18 +60,17 @@
         margin:auto;
         cursor: pointer;
         color:#38a742;
-        
+
       }
       a {
-
-        /*font-size:21px;*/
         cursor:pointer;
+        text-decoration:none
       }
       </style>
 
-    <div class="container" >
+    <paper-material class="container" >
       <p class="heading">Our Programs</p>
-      <div style="    overflow-x:scroll; " class="layout a horizontal" >
+      <div style="    overflow-x:auto; " class="layout a horizontal" >
         <!-- <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation"> -->
           <a class="mm" name="our-programs" href="/our-programs#1">
             <div ><img class="box" src="KIDS_PIC/child01.svg"> <p>Play Group</p> <p>1.5 years to 2.5 years</p></div>
@@ -95,7 +92,7 @@
         </a>
          <!-- </iron-selector> -->
       </div>
-    </div>
+    </paper-material>
 
     </template>
 

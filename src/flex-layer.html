@@ -1,6 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/paper-material/paper-material.html" >
-<link rel="import" href="../bower_components/iron-image/iron-image.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../bower_components/paper-ripple/paper-ripple.html" >
 
@@ -14,68 +13,63 @@
     <style include="iron-flex iron-flex-alignment"></style>
     <style >
       .container {
-            background-image: url([[bimage]]);
-            /*height:[[h]];*/
+            background-image: url("kids_creativity/creative_rainbow_blue_balon.svg");
             background-size: cover ;
             background-repeat: no-repeat;
             background-position: center;
-
+            min-height:60%;
       }
-      /*.color{ color: #767777; }*/
+
       .color{
         color: #233445;
         opacity: 0.8;
       }
+
       .logo-font {
             font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-            line-height: 1;
+            /*line-height: 1;*/
             font-weight: 100;
             font-size: 60px;
       }
       .sub-slogan{
-        /*padding-top: 24px;*/
-        font-size: 21px;
+        font-size: 24px;
       }
-      .create-character a {
+
+      .btn-link{
+        color:#38a742;
+        font-weight:lighter;
         text-decoration: none;
         font-size:21px;
         cursor:pointer;
+
       }
-      .margin-top{
-        /*margin-top:[[margin-top]];*/
-      }
-      .btn-link{
-        color:#38a742;
-        .font-weight:lighter
+      .nospace , .nospace img{
+        padding:0;
+        margin:0;
       }
       @media screen and (max-height: 568px), screen and (max-width: 700px) {
-          body {
-              background-color: lightgreen;
-          }
           .logo-font {font-size:32px;}
-          .sub-slogan{font-size:19px;width:70%;margin:auto;text-align:center}
-          .create-character a {font-size:17px;}
-          .margin-top{
-            /*margin-top:[[margin-top-mediaq]];*/
-          }
+          .sub-slogan{font-size:21px;width:70%;margin:auto;text-align:center}
+           a {font-size:17px;}
+
         }
       </style>
+    <paper-material class="container fit layout vertical center-justified" >
 
-    <div class="container fit layout vertical center-justified" style="min-height:60%;">
-      <div class="self-center margin-top"  >
-          <p class=" vertical layout center logo-font color margin-top" > {{heading}} </p>
-          <p class="vertical layout center logo-font sub-slogan color">{{content}}</p>
+      <div class="self-center"   >
+          <p class=" vertical layout center nospace "  >
+            <img width="60%" src="../images/logo-web.png" class="nospace"/>
+           </p>
+          <p class="vertical layout center sub-slogan color nospace">{{content}}</p>
       </div>
-      <div class="horizontal center-justified layout" >  <p class="color create-character " >
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-         <a class="btn-link" name="aboutus" href="/about-us"> {{ltext}} </a>
-       </iron-selector>
-
-
-
-
-       </p></div>
-    </div>
+      <div class="horizontal center-justified layout" >
+        <p class="color" >
+          <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+            <a class="btn-link" name="aboutus" href="/about-us"> {{ltext}} </a>
+          </iron-selector>
+       </p>
+     </div>
+    </paper-material>
     </template>
 
   <script>

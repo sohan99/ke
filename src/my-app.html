@@ -86,6 +86,12 @@
           paper-tab {
             --paper-tabs-selection-bar-color: --paper-teal-a400;
           }
+
+          @media screen and (max-width: 500px) {
+              paper-tabs{
+                  display:none;
+              }
+          }
      </style>
 
 
@@ -101,7 +107,8 @@
 
        <!-- Drawer content -->
        <app-drawer >
-         <app-toolbar>Menu</app-toolbar>
+         <!-- <app-toolbar><img width="100%" src="../images/logo-web.png"/ style=""></app-toolbar> -->
+         <img width="100%" src="../images/logo-web.png"/ style="">
          <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
            <a name="home" href="/home">HOME</a>
            <a name="about-us" href="/about-us">ABOUT US</a>
@@ -110,7 +117,7 @@
            <a name="faqs-colaps" href="/faqs-colaps" > FAQS </a>
            <a name="contact-us" href="/contact-us" > CONTACT US </a>
            <a name="mission" href="/mission" > OUR MISSION </a>
-           <a name="gallery" href="/gallery" > OUR MISSION </a>
+           <a name="gallery" href="/gallery" > GALLERY </a>
 
          </iron-selector>
        </app-drawer>

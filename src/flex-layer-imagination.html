@@ -14,11 +14,11 @@
         padding:0;margin:0;
       }
       .container {
-          background-image: url([[bimage]]);
-          /*height:70%;*/
+          background-image: url("kids_creativity/flying-boy-16-low.jpg");
           background-size: cover ;
           background-repeat: no-repeat;
           background-position: center;
+          min-height:80%;
       }
 
 
@@ -31,7 +31,7 @@
         line-height: 40px;
       }
 
-      .wigth{
+      .weigth{
         font-weight: 100;
         /*line-height: normal;*/
       }
@@ -42,10 +42,10 @@
 
       }
       .heading{
-        font-size: 45px;
+        font-size: 34px;
       }
       .subheading{
-        font-size: 24px;
+        font-size: 21px;
         opacity:0.8;
         margin: 10px;
       }
@@ -53,6 +53,7 @@
         text-decoration: none;
         color: #64ffda;
         font-size: 21px;
+
       }
 
       @media screen and (max-height: 568px), screen and (max-width: 700px) {
@@ -70,12 +71,12 @@
         }
       </style>
 
-    <div class="container fit layout horizontal end ">
+    <div class="container fit layout horizontal end " >
       <div class="banner-text"  >
         <div class="padding-text">
-          <p class="  heading margin-top wigth" > {{heading}} </p>
-          <p class="subheading wigth">{{content}}</p>
-          <div class="" >   <p  class="subheading" > <a  href="/mission" name="mission" class="color"> Our Mission &amp Values  </a>  </p> </div>
+          <p class="heading margin-top weigth" > {{heading}} </p>
+          <p class="subheading weigth">{{content}}</p>
+          <p  class="subheading" > <a  href="/mission" name="mission" class="color weigth"> Our Mission &amp Values  </a>  </p>
         </div>
       </div>
 
