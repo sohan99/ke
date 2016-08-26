@@ -21,6 +21,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style is="custom-style" >
       :host {
         display: block;
+        cursor: pointer;
       }
       .collapse-content {
         padding: 15px;
@@ -43,7 +44,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 <div class="vertical layout" >
   <paper-card  class="font-size" >
-    <p on-tap="_toggleCollapse" style="color:#198e24;">[[question]]</p>
+    <p on-tap="_toggleCollapse" on-click="_toggleCollapse" style="color:#198e24;">[[question]]</p>
     <iron-collapse id="collapse">
       <div class="card-content">
         [[answer]]

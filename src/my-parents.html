@@ -1,0 +1,40 @@
+<dom-module id="my-parents">
+<style include="iron-flex iron-flex-alignment"></style>
+
+<template>
+  <style>:host{display:block;width:100%;height:100%;background-color:white;margin:auto;}.box{max-width:600px;min-width:300px;margin-top:20px;margin-right:2%;}.opacity{opacity:0.91;}.loweropacity{opacity:0.58;}.card-title{font-size:24px;font-weight:300;line-height:normal;color:black;height:auto;margin:0;padding:0;padding:5px 16px;opacity:0.75;}.btn-color{color:#38a742;}@media screen and (max-width: 760px){:host{height:100%;}}</style>
+  <div class="layout center-justified horizontal wrap">
+       <div class="box">
+         <paper-card class="box opacity">
+           <img width="100%" style="opacity:1" src="cards_icon/Admissions_Challenge.jpg">
+           <h4 class="card-title">Ask An expert</h4>
+             <div class="card-content">
+                 <paper-input error-message="Invalid input!" label="Your Name ">
+                   <iron-icon class="loweropacity" icon="face" prefix="" stle="margin-right:10px;"></iron-icon>
+                 </paper-input>
+                 <paper-input error-message="Invalid Email" label="Your Email" style="min-height:100px">
+                     <iron-icon class="loweropacity" icon="mail" prefix=""></iron-icon>
+                 </paper-input>
+                <paper-textarea char-counter="" label="How can we help you!?" no-label-float="">
+                  <iron-icon class="loweropacity" suffix="" icon="clear" alt="clear" title="clear">
+                  </iron-icon>
+                </paper-textarea>
+             </div>
+             <div class="card-actions">
+               <paper-button class="btn-color"> Send <iron-icon icon="send" suffix=""></iron-icon></paper-button>
+             </div>
+           </paper-card>
+       </div>
+       <paper-material class="box">
+         <h3 class="card-title loweropacity">Checkout our ongoing programs and events</h3>
+         <iframe src="https://calendar.google.com/calendar/htmlembed?src=%23contacts%40group.v.calendar.google.com&amp;ctz=Asia/Calcutta" style="border: 0" width="100%" height="600 px" frameborder="0" scrolling="no"></iframe>
+       </paper-material>
+
+
+     </div>
+       
+       <flex-layer-montessori class="content" name="new-view" heading="What is Montessori School" bh="100%" bw="auto" content="School where kids learn practical life skills, sensorial development, language, mathematics, history, science, and cultural studies (geography, art, music). It is a environment that consistently supports development of their will — that is, positive willpower and self-control" bimage="kids_creativity/flying-boy-16-low.jpg"></flex-layer-montessori>
+</template>
+  <script>Polymer({is:"my-parents"});</script>
+
+</dom-module>
