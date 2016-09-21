@@ -1,0 +1,117 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html" >
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/parallax-container/parallax-container.html">
+<link rel="import" href="../bower_components/paper-fab/paper-fab.html">
+
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+<link rel="import" href="../bower_components/neon-animation/animations/slide-from-bottom-animation.html">
+<link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html">
+
+
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+
+<dom-module id="notifications-bottom">
+
+    <template>
+            <style include="iron-flex iron-flex-alignment"></style>
+            <style>
+                :host{height:100%;width:100%;}
+                .btn{z-index:2;position:fixed;bottom:0;right:0;}
+                /*paper-dialog{min-width:300px;overflow:auto;}*/
+                .smaller-p{font-size:80%;margin:0;}
+                h2, p, paper-input, paper-dropdown{font-weight:lighter;}
+                iron-icon{opacity:0.5;}
+                .btn{background-color:#EEFF41;color:antiquewhite;margin:10px;top:0;}
+                .btn-modal{background-color:#d6d6d6;color:#38a742;margin:20px;}
+                paper-dialog.size-position {
+                    position: fixed;
+                    bottom: -4px;
+                    right: -20px;
+                    max-width:350px;
+                    width:95%;
+                    height: 80%;    
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    padding:5px;
+                    padding-top:0;
+                }
+                paper-material{
+                    padding: 5px 10px 5px 10px;
+                }
+                paper-material:hover{
+                    cursor: pointer;
+                }
+                a{
+                    color: #38a742;
+                    font-weight: lighter;
+                    text-decoration: none;
+                }
+                p b{
+                    font-weight: 16px;
+                }
+                .element {
+                    color: white;
+                    animation: shake 10s cubic-bezier(.36,.07,.19,.97) both infinite;
+                    /*animation: shake 5s infinite;*/
+                    /*animation-direction: alternate;*/
+    
+                }
+               @keyframes shake {
+                    1%, 9% {
+                        transform: translate3d(-1px, 0, 0);
+                    }
+                    
+                    2%, 8% {
+                        transform: translate3d(2px, 0, 0);
+                    }
+
+                    3%, 5%, 7% {
+                        transform: translate3d(-3px, 0, 0);
+                    }
+
+                    4%, 6% {
+                        transform: translate3d(3px, 0, 0);
+                    }
+                }
+                @media screen and (max-width: 568px){
+                   .btn{ top:0;
+                   }
+                }
+            </style>
+                <paper-dialog class="size-position"   id="animated" entry-animation="slide-from-bottom-animation" exit-animation="fade-out-animation" >
+                    <paper-material  elevation="1" on-tap="_open" data-args="../images/notification/ori1.jpg"  >
+                        <img src="../images/notification/noti1.jpg"  data-args="../images/notification/ori1.jpg" width="100%"/>
+                        <p data-args="../images/notification/ori1.jpg">
+                           <b> Positive parenting.</b><br />
+                            My child saves TAT for CAT is this NORMAL??.
+                        </p>
+                        
+                    </paper-material>
+                    <paper-material elevation="1" on-tap="_open" data-args="../images/notification/ori2.jpg" >
+                        <img src="../images/notification/noti2.jpg" data-args="../images/notification/ori2.jpg" width="100%"/>
+                        <p  data-args="../images/notification/ori2.jpg">
+                           <b> October Fun </b><br />
+                            Aerobics, Yoga, Cooking, Painting, Gardening
+                        </p>
+                    </paper-material>
+
+                </paper-dialog>
+
+
+            <paper-fab mini on-tap="_call"  src="../images/notification_unop.png" data-args="some text" title="alerts" class="btn element"></paper-fab>       
+    </template>
+
+  <script>
+    Polymer({
+      is: 'notifications-bottom',
+      _call:function(e){this.$.animated.open();},
+      _close:function(){this.$.animated.close()},
+      _open:function(e){
+        var args = e.target.getAttribute('data-args');
+        console.log(args)
+        window.open(args);
+      }
+    });
+  </script>
+</dom-module>

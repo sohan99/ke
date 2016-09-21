@@ -28,6 +28,7 @@
  <link rel="import" href="my-icons.html">
  <!-- <link rel="import" href="my-home.html" > -->
  <link rel="import" href="admissions-open.html">
+  <link rel="import" href="notifications-bottom.html">
 
 
  <dom-module id="my-app">
@@ -119,7 +120,6 @@
            <a name="gallery" href="/gallery"> GALLERY </a>
            <a name="faqs-colaps" href="/faqs-colaps"> FAQS </a>
            <a name="contact-us" href="/contact-us"> CONTACT US </a>
-
          </iron-selector>
        </app-drawer>
 
@@ -131,7 +131,7 @@
              <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
 
              <div title>KIDZ EDEN</div>
-             <paper-tabs selected="[[page]]" attr-for-selected="name" scrollable  sticky style="min-width:70%;float:right;" fit-container="true">
+             <paper-tabs selected="[[page]]" attr-for-selected="name" scrollable  sticky style="min-width:70%;float:right;margin-right: 15px;" fit-container="true">
                 <paper-tab link="" name="home"><a href="/home" class="home" tabindex="-1">HOME</a> </paper-tab>
                <paper-tab link="" name="about-us"><a href="/about-us" class="home" tabindex="-1">ABOUT</a> </paper-tab>
                <paper-tab link="" name="our-programs"><a href="/our-programs" class="home" tabindex="-1">PROGRAMS</a> </paper-tab>
@@ -168,7 +168,9 @@
        </app-header-layout>
 
      </app-drawer-layout>
+     <notifications-bottom></notifications-bottom>
      <admissions-open></admissions-open>
+     
    </template>
 
    <script>

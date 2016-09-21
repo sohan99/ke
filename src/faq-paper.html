@@ -1,13 +1,3 @@
-<!--
-@license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../bower_components/iron-collapse/iron-collapse.html">
@@ -35,16 +25,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         font-size:20px;
         font-weight:lighter;
         opacity:0.75;
-
       }
       p{
         margin:0;
       }
-
     </style>
 <div class="vertical layout" >
-  <paper-card  class="font-size" >
-    <p on-tap="_toggleCollapse" on-click="_toggleCollapse" style="color:#198e24;">[[question]]</p>
+  <paper-card  class="font-size" on-tap="_toggleCollapse">
+    <p   style="color:#198e24;">[[question]] <span style="float:right;margin-right:4px;">[[toggleIcon]]</span></p>
     <iron-collapse id="collapse">
       <div class="card-content">
         [[answer]]
@@ -55,14 +43,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </template >
 
   <script>
-
     Polymer({
 
       is: 'faq-paper',
+      properties: {
+        toggleIcon: {
+          type:String,
+          value: "+",
+          notify: true,
+          reflectToAttribute: true
+        }
+      },
       _toggleCollapse: function(e) {
         // if (!e.target.classList.contains('card-content')) {
-          console.log(this.children);
+        console.log(this.children);
+        // this.toggleIcon = '-'
+        if(this.toggleIcon == "+"){
+          this.toggleIcon = '-'
+        }else{
+          this.toggleIcon = '+'
+        }
          this.$.collapse.toggle();
+
         // }
 	     }
     });
