@@ -4,8 +4,81 @@
 
 
 </head><body><dom-module id="l2t-paper-slider">
-  <style>.slider{position:relative;overflow:hidden;display:box;display:-webkit-box;white-space:nowrap;}.slider__slides{position:relative;font-size:0;width:100%;height:100%;background:#FFCDD2;-webkit-transition:-webkit-transform .3s cubic-bezier(.51, .92, .24, 1);transition:-webkit-transform .3s cubic-bezier(.51, .92, .24, 1);transition:transform .3s cubic-bezier(.51, .92, .24, 1);transition:transform .3s cubic-bezier(.51, .92, .24, 1), -webkit-transform .3s cubic-bezier(.51, .92, .24, 1);will-change:transform;}.slider__dots{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:absolute;bottom:5%;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);}*[hidden]{display:none;}.slider__dot,
-    .slider__indicator{display:block;margin:0 .5em;width:1em;height:1em;background:var(--paper-slide-dot, rgba(255, 255, 255, .5));border-radius:50%;cursor:pointer;}.slider__dot:focus{outline:none;box-shadow:0 0 7px 1px var(--paper-slide-dot, rgba(255, 255, 255, .5));}.slider__indicator{position:absolute;background:var(--paper-slide-dot-selected, #FFF);width:auto;}.slider__indicator--left{-webkit-transition:left .3s cubic-bezier(.51, .92, .24, 1.15), right .3s .1s cubic-bezier(.51, .92, .24, 1.15);transition:left .3s cubic-bezier(.51, .92, .24, 1.15), right .3s .1s cubic-bezier(.51, .92, .24, 1.15);}.slider__indicator--right{-webkit-transition:left .3s .1s cubic-bezier(.51, .92, .24, 1.15), right .3s cubic-bezier(.51, .92, .24, 1.15);transition:left .3s .1s cubic-bezier(.51, .92, .24, 1.15), right .3s cubic-bezier(.51, .92, .24, 1.15);}.slider{width:var(--paper-slide-width, 100%);height:var(--paper-slide-height, 600px);}:host ::content *{font-size:medium;}:host ::content paper-slide{width:var(--paper-slide-width, 100%);height:var(--paper-slide-height, 600px);overflow-x:hidden;display:inline-block;}</style>
+  <style>
+    .slider {
+      position: relative;
+      overflow: hidden;
+      display: box;
+      display: -webkit-box;
+      white-space: nowrap
+    }
+    .slider__slides {
+      position: relative;
+      font-size: 0;
+      width: 100%;
+      height: 100%;
+      background: #FFCDD2;
+      -webkit-transition: -webkit-transform .3s cubic-bezier(.51, .92, .24, 1);
+      transition: -webkit-transform .3s cubic-bezier(.51, .92, .24, 1);
+      transition: transform .3s cubic-bezier(.51, .92, .24, 1);
+      transition: transform .3s cubic-bezier(.51, .92, .24, 1), -webkit-transform .3s cubic-bezier(.51, .92, .24, 1);
+      will-change: transform
+    }
+    .slider__dots {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%)
+    }
+    *[hidden] {
+      display: none;
+    }
+    .slider__dot,
+    .slider__indicator {
+      display: block;
+      margin: 0 .5em;
+      width: 1em;
+      height: 1em;
+      background: var(--paper-slide-dot, rgba(255, 255, 255, .5));
+      border-radius: 50%;
+      cursor: pointer
+    }
+    .slider__dot:focus {
+      outline: none;
+      box-shadow: 0 0 7px 1px var(--paper-slide-dot, rgba(255, 255, 255, .5));
+    }
+    .slider__indicator {
+      position: absolute;
+      background: var(--paper-slide-dot-selected, #FFF);
+      width: auto
+    }
+    .slider__indicator--left {
+      -webkit-transition: left .3s cubic-bezier(.51, .92, .24, 1.15), right .3s .1s cubic-bezier(.51, .92, .24, 1.15);
+      transition: left .3s cubic-bezier(.51, .92, .24, 1.15), right .3s .1s cubic-bezier(.51, .92, .24, 1.15)
+    }
+    .slider__indicator--right {
+      -webkit-transition: left .3s .1s cubic-bezier(.51, .92, .24, 1.15), right .3s cubic-bezier(.51, .92, .24, 1.15);
+      transition: left .3s .1s cubic-bezier(.51, .92, .24, 1.15), right .3s cubic-bezier(.51, .92, .24, 1.15)
+    }
+    .slider {
+      width: var(--paper-slide-width, 100%);
+      height: var(--paper-slide-height, 600px)
+    }
+    :host ::content * {
+      font-size: medium;
+    }
+    :host ::content paper-slide{
+      width: var(--paper-slide-width, 100%);
+      height: var(--paper-slide-height, 600px);
+      overflow-x: hidden;
+      display: inline-block;
+    }
+  </style>
   <template>
     <div id="container" class="slider" data-pos$="{{position}}">
       <div class="slider__slides">

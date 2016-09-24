@@ -11,19 +11,61 @@
 
   <template>
     <style include="iron-flex iron-flex-alignment"></style>
-    <style>.container{background-image:url([[bimage]]);background-size:cover;background-repeat:no-repeat;background-position:center;}.color{color:#233445;opacity:0.8;}.logo-font{font-family:'Roboto', 'Helvetica', 'Arial', sans-serif;line-height:1;font-weight:100;font-size:60px;}.sub-slogan{font-size:21px;}.create-character a{text-decoration:none;font-size:21px;cursor:pointer;}.margin-top{}.btn-link{color:#38a742;.font-weight:lighter;}.nospace , .nospace img{padding:0;margin:0;}@media screen and (max-height: 568px), screen and (max-width: 700px){body{background-color:lightgreen;}.logo-font{font-size:32px;}.sub-slogan{font-size:19px;width:70%;margin:auto;text-align:center;}.create-character a{font-size:17px;}.margin-top{}}</style>
-    <paper-material class="container fit layout vertical center-justified" style="min-height:60%">
+    <style>
+      .container {
+            background-image: url("kids_creativity/creative_rainbow_blue_balon.svg");
+            background-size: cover ;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height:60%;
+      }
 
-      <div class="self-center margin-top" style="line-height:0.8">
+      .color{
+        color: #233445;
+        opacity: 0.8;
+      }
+
+      .logo-font {
+            font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            /*line-height: 1;*/
+            font-weight: 100;
+            font-size: 60px;
+      }
+      .sub-slogan{
+        font-size: 24px;
+      }
+
+      .btn-link{
+        color:#38a742;
+        font-weight:lighter;
+        text-decoration: none;
+        font-size:21px;
+        cursor:pointer;
+
+      }
+      .nospace , .nospace img{
+        padding:0;
+        margin:0;
+      }
+      @media screen and (max-height: 568px), screen and (max-width: 700px) {
+          .logo-font {font-size:32px;}
+          .sub-slogan{font-size:21px;width:70%;margin:auto;text-align:center}
+           a {font-size:17px;}
+
+        }
+      </style>
+    <paper-material class="container fit layout vertical center-justified">
+
+      <div class="self-center">
           <p class="vertical layout center nospace">
             <img width="60%" src="../images/logo-web.png" class="nospace">
            </p>
-          <p class="vertical layout center logo-font sub-slogan color nospace">{{content}}</p>
+          <p class="vertical layout center sub-slogan color nospace">{{content}}</p>
       </div>
       <div class="horizontal center-justified layout">
-        <p class="color create-character">
+        <p class="color">
           <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-            <a class="logo-font sub-slogan btn-link" name="aboutus" href="/about-us"> {{ltext}} </a>
+            <a class="btn-link" name="aboutus" href="/about-us"> {{ltext}} </a>
           </iron-selector>
        </p>
      </div>

@@ -13,7 +13,64 @@
 
   <template>
     <style include="iron-flex iron-flex-alignment"></style>
-    <style>.container{padding:20px;background-color:white;width:100%;overflow:hidden;margin-top:2px;}.heading{font-family:"Roboto","Helvetica","Arial",sans-serif;font-size:34px;font-weight:100;line-height:40px;opacity:.54;}p{opacity:.7;text-align:center;}.box{cursor:pointer;-webkit-transition:all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);transition:all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);}.box::after{z-index:-1;box-shadow:0 5px 15px rgba(0, 0, 0, 0.3);opacity:0;-webkit-transition:all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);transition:all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);}.box:hover{-webkit-transform:scale(1.25, 1.25);transform:scale(1.25, 1.25);}.box:hover::after{opacity:1;}.mm{margin:auto;cursor:pointer;color:#38a742;}a{cursor:pointer;text-decoration:none;}</style>
+    <style>
+    :host{
+      width:100%;
+    };
+      .container {
+            padding:20px;
+            background-color: white;
+            width:100%;
+            overflow:hidden;
+            margin-top:2px;
+            padding:0;
+      }
+      .heading {
+          font-family: "Roboto","Helvetica","Arial",sans-serif;
+          font-size: 34px;
+          font-weight: 100;
+          line-height: 40px;
+          opacity: .54;
+      }
+      p{
+        opacity: .7;
+        text-align: center;
+      }
+      .box {
+        cursor: pointer;
+        -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+      }
+
+      .box::after {
+
+        z-index: -1;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+
+      .box:hover {
+        -webkit-transform: scale(1.25, 1.25);
+        transform: scale(1.25, 1.25);
+      }
+
+      .box:hover::after {
+          opacity: 1;
+      }
+      .mm{
+        margin:auto;
+        cursor: pointer;
+        color:#38a742;
+
+      }
+      a {
+        cursor:pointer;
+        text-decoration:none
+      }
+      </style>
 
     <paper-material class="container">
       <p class="heading">Our Programs</p>

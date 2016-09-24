@@ -7,14 +7,74 @@
 
   <template>
     <style include="iron-flex iron-flex-alignment"></style>
-    <style>p{padding:0;margin:0;}.container{background-image:url([[bimage]]);background-size:cover;background-repeat:no-repeat;background-position:center;}.banner-text{width:100%;margin-top:30%;background-color:rgba(55, 71, 79 ,0.8);text-align:left;color:white;line-height:40px;}.wigth{font-weight:100;}.padding-text{margin:20px;margin-left:35%;}.heading{font-size:45px;}.subheading{font-size:24px;opacity:0.8;margin:10px;}.color{text-decoration:none;color:#64ffda;font-size:21px;}@media screen and (max-height: 568px), screen and (max-width: 700px){.padding-text{margin-left:20px;}.heading{font-size:27px;opacity:0.9;}.subheading{font-size:21px;}}</style>
+    <style>
+      p{
+        padding:0;margin:0;
+      }
+      .container {
+          background-image: url("kids_creativity/creatibe_sunlow.jpg");
+          background-size: cover ;
+          background-repeat: no-repeat;
+          background-position: center;
+          min-height:80%;
+      }
+
+
+      .banner-text{
+        width: 100%;
+        margin-top:30%;
+        background-color: rgba(55, 71, 79 ,0.8);
+        text-align: left;
+        color: white;
+        line-height: 40px;
+      }
+
+      .weigth{
+        font-weight: 100;
+        /*line-height: normal;*/
+      }
+
+      .padding-text{
+        margin:20px;
+        margin-left:35%;
+
+      }
+      .heading{
+        font-size: 34px;
+      }
+      .subheading{
+        font-size: 21px;
+        opacity:0.8;
+        margin: 10px;
+      }
+      .color{
+        text-decoration: none;
+        color: #64ffda;
+        font-size: 21px;
+
+      }
+
+      @media screen and (max-height: 568px), screen and (max-width: 700px) {
+          .padding-text{
+            margin-left:20px;
+          }
+          .heading{
+              font-size: 27px;
+              opacity:0.9;
+          }
+
+            .subheading{
+              font-size: 21px;
+            }
+        }
+      </style>
 
     <div class="container fit layout horizontal end">
       <div class="banner-text">
         <div class="padding-text">
-          <p class="heading margin-top wigth"> {{heading}} </p>
-          <p class="subheading wigth">{{content}}</p>
-          <div class="">   <p class="subheading"> <a href="/mission" name="mission" class="color"> Our Mission &amp; Values  </a>  </p> </div>
+          <p class="heading margin-top weigth"> {{heading}} </p>
+          <p class="subheading weigth">{{content}}</p>
+          <p class="subheading"> <a href="/mission" name="mission" class="color weigth"> Our Mission &amp; Values  </a>  </p>
         </div>
       </div>
 

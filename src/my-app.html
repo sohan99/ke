@@ -1,12 +1,4 @@
-<!--
- -@license
- -Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
- -This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
- -The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
- -The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
- -Code distributed by Google as part of the polymer project is also
- -subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
- --->
+
  <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/app-route/app-location.html">
  <link rel="import" href="../bower_components/app-route/app-route.html">
@@ -26,9 +18,21 @@
  <!-- <link rel="import" href="../bower_components/paper-card/paper-card.html"> -->
 
  <link rel="import" href="my-icons.html">
- <!-- <link rel="import" href="my-home.html" > -->
+ <link rel="import" href="my-home.html" > 
+  <link rel="import" href="my-about-us.html" > 
+  <link rel="import" href="my-our-programs.html" > 
+  <link rel="import" href="my-maria-montessori.html" > 
+  <link rel="import" href="my-faqs-colaps.html" > 
+  <link rel="import" href="my-contact-us.html" >
+  <link rel="import" href="my-mission.html">
+  <link rel="import" href="my-gallery.html">
+  <link rel="import" href="my-parents.html">
+
+
+
+
  <link rel="import" href="admissions-open.html">
-  <link rel="import" href="notifications-bottom.html">
+ <link rel="import" href="notifications-bottom.html">
 
 
  <dom-module id="my-app">
@@ -183,8 +187,9 @@
 
          page: {
            type: String,
-           reflectToAttribute: true,
-           observer: '_pageChanged'
+
+           reflectToAttribute: true
+          // observer: '_pageChanged'
          },
 
        },

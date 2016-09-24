@@ -1,59 +1,45 @@
 <html><head><link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
 <link rel="import" href="../bower_components/neon-animation/animations/scale-up-animation.html">
 <link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html">
-
-<link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
-
 <link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
-<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
 <link rel="import" href="../bower_components/iron-dropdown/iron-dropdown.html">
-
-<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
 <link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
-<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
-
 <link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
 <link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu-light.html">
-
-<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
-
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
-
 <link rel="import" href="../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../bower_components/paper-input/paper-textarea.html">
-
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
-<link rel="import" href="../bower_components/iron-icons/image-icons.html">
 
-</head><body><dom-module id="admissions-open">
+</head><body><dom-module id="admissions-open" assetpath="/">
   <template>
     <style include="iron-flex iron-flex-alignment"></style>
 
-    <style>:host{height:100%;width:100%;}.btn{z-index:2;position:fixed;bottom:0;right:0;}paper-dialog{overflow:auto;}.smaller-p{font-size:80%;margin:0;}h2, p, paper-input, paper-dropdown{font-weight:lighter;}iron-icon{opacity:0.5;}.btn{background-color:deeppink;color:antiquewhite;margin:20px;font-weight:bold;}.btn-modal{background-color:#d6d6d6;color:#54524e;margin:20px;font-weight:bold;}</style>
+    <style>:host{height:100%;width:100%;}.btn{z-index:2;position:fixed;bottom:0;right:0;}paper-dialog{min-width:300px;overflow:auto;}.smaller-p{font-size:80%;margin:0;}h2, p, paper-input, paper-dropdown{font-weight:lighter;}iron-icon{opacity:0.5;}.btn{background-color:deeppink;color:antiquewhite;margin:20px;font-weight:bold;}.btn-modal{background-color:#d6d6d6;color:#38a742;margin:20px;font-weight:bold;}</style>
 
     <paper-dialog id="animated" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop="">
-
+      <paper-button style="margin:0;padding:0; position:absolute;right:0" on-click="_close" on-tap="_close" class="btn-modal">  <iron-icon icon="close" suffix=""></iron-icon></paper-button>
       <div class="horizontal around-justified layout" style="height:100%">
-      <div class="self-center" style="margin:auto;min-width:350px">
-                <h2>Admissions Enquiry</h2>
-            <paper-input error-message="Invalid input!" label="Your Name ">
-              
-            </paper-input>
-            <paper-input error-message="Invalid Email" label="Your Email">
-                
+      <div class="self-center" style="margin:auto">
+          <h2>Admissions Enquiry</h2>
+          <form is="iron-form" method="post" action="contact.php">
+            <paper-input error-message="Invalid input!" auto-validate="" pattern="[a-zA-Z ]{2,50}" required="" name="name" label="Your Name ">
             </paper-input>
 
-            <paper-input error-message="Invalid Phone Number" label="Your 10 digit Phone Number">
-                
+            <paper-input error-message="Invalid Email" name="email" auto-validate="" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required="" label="Your Email">
+            </paper-input>
+
+            <paper-input error-message="Invalid Phone Number" name="number" auto-validate="" pattern="^[0-9]{5,12}$" required="" label="Your 10 digit Phone Number">
             </paper-input>
 
             <paper-dropdown-menu label="Child Age Group" style="width:100%">
-            <paper-listbox class="dropdown-content" attr-for-selected="file" selected="non-existing" fallback-selection="default">
+            <paper-listbox class="dropdown-content" attr-for-selected="file" name="group" selected="non-existing" fallback-selection="default">
                 <paper-item file="1"><b>PlayGroup</b> <p class="smaller-p"> <br> 1.5-2.5 years </p></paper-item>
                 <paper-item file="2"><b>Montessori I</b> <p class="smaller-p"> <br> 2.5-3.5 years</p></paper-item>
                 <paper-item file="3"><b>Montessori II</b><p class="smaller-p"> <br> 3.5-4.5 years</p></paper-item>
@@ -61,39 +47,24 @@
                 <paper-item file="4"><b>DAY CARE</b> <p class="smaller-p"> <br> above 2 years</p></paper-item>
                 </paper-listbox>
             </paper-dropdown-menu>
-
-
-            <paper-input error-message="Invalid State" label="State">
-                
+            <paper-input error-message="Invalid State" name="state" label="State">
             </paper-input>
-
-            <paper-input error-message="Invalid City" label="City">
-                
+            <paper-input error-message="Invalid City" name="city" label="City">
             </paper-input>
-
-            <paper-textarea label="Your Address" no-label-float="">
-
+            <paper-input style="width:0 !important;height:0 !important" name="placeholder" value="enquire" label="City">
+            </paper-input>
+            <paper-textarea label="Your Address" name="address" no-label-float="">
               <iron-icon class="loweropacity" suffix="" style="padding:10px" icon="clear" alt="clear" title="clear">
               </iron-icon>
-
             </paper-textarea>
-
-            <paper-textarea char-counter="" label="Leave your comment bellow" no-label-float="">
-
+            <paper-textarea char-counter="" name="message" label="Leave your comment below" no-label-float="">
               <iron-icon class="loweropacity" suffix="" style="padding:10px" icon="clear" alt="clear" title="clear">
               </iron-icon>
-
             </paper-textarea>
-            <paper-button style="text-align:right" class="btn-modal"> Enquire Now <iron-icon icon="send" suffix=""></iron-icon></paper-button>
-            <paper-button style="text-align:right" on-tap="_close" class="btn-modal"> close <iron-icon icon="close" suffix=""></iron-icon></paper-button>
-
+            <button class="btn-modal" type="submit"> Enquire Now <iron-icon icon="send" suffix=""></iron-icon></button>
+          </form>
     </div>
     </div>
-
-
-
-
-
 
 </paper-dialog>
 

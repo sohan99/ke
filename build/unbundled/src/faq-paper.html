@@ -8,10 +8,31 @@
 <style include="iron-flex iron-flex-alignment"></style>
   <template>
 
-    <style is="custom-style">:host{display:block;}.collapse-content{padding:15px;border:1px solid #dedede;}paper-card{padding-left:10px;}.font-size{font-size:20px;font-weight:lighter;opacity:0.75;}p{margin:0;}</style>
+    <style is="custom-style">
+      :host {
+        display: block;
+        cursor: pointer;
+      }
+      .collapse-content {
+        padding: 15px;
+        border: 1px solid #dedede;
+      }
+      paper-card{
+        padding-left:10px;
+      }
+
+      .font-size{
+        font-size:20px;
+        font-weight:lighter;
+        opacity:0.75;
+      }
+      p{
+        margin:0;
+      }
+    </style>
 <div class="vertical layout">
-  <paper-card class="font-size">
-    <p on-tap="_toggleCollapse" style="color:#198e24">[[question]]</p>
+  <paper-card class="font-size" on-tap="_toggleCollapse">
+    <p style="color:#198e24">[[question]] <span style="float:right;margin-right:4px">[[toggleIcon]]</span></p>
     <iron-collapse id="collapse">
       <div class="card-content">
         [[answer]]
@@ -21,7 +42,7 @@
 
 </div></template>
 
-  <script>Polymer({is:"faq-paper",_toggleCollapse:function(l){console.log(this.children),this.$.collapse.toggle()}});</script>
+  <script>Polymer({is:"faq-paper",properties:{toggleIcon:{type:String,value:"+",notify:!0,reflectToAttribute:!0}},_toggleCollapse:function(o){console.log(this.children),"+"==this.toggleIcon?this.toggleIcon="-":this.toggleIcon="+",this.$.collapse.toggle()}});</script>
 
 </dom-module>
 </body></html>

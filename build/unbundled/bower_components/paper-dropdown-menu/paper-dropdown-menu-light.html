@@ -15,7 +15,175 @@
 
 </head><body><dom-module id="paper-dropdown-menu-light">
   <template>
-    <style include="paper-dropdown-menu-shared-styles">:host(:focus){outline:none;}.dropdown-trigger{box-sizing:border-box;position:relative;width:100%;padding:16px 0 8px 0;}:host([disabled]) .dropdown-trigger{pointer-events:none;opacity:var(--paper-dropdown-menu-disabled-opacity, 0.33);}:host([no-label-float]) .dropdown-trigger{padding-top:8px;}#input{@apply (--paper-font-subhead);@apply (--paper-font-common-nowrap);border-bottom:1px solid var(--paper-dropdown-menu-color, --secondary-text-color);color:var(--paper-dropdown-menu-color, --primary-text-color);width:200px;min-height:24px;box-sizing:border-box;padding:12px 20px 0 0;outline:none;@apply (--paper-dropdown-menu-input);}:host-context([dir="rtl"]) #input{padding-right:0px;padding-left:20px;}:host([disabled]) #input{border-bottom:1px dashed var(--paper-dropdown-menu-color, --secondary-text-color);}:host([invalid]) #input{border-bottom:2px solid var(--paper-dropdown-error-color, --error-color);}:host([no-label-float]) #input{padding-top:0;}label{@apply (--paper-font-subhead);@apply (--paper-font-common-nowrap);display:block;position:absolute;bottom:0;left:0;right:0;top:28px;box-sizing:border-box;width:100%;padding-right:20px;text-align:left;transition-duration:.2s;transition-timing-function:cubic-bezier(.4,0,.2,1);color:var(--paper-dropdown-menu-color, --secondary-text-color);@apply (--paper-dropdown-menu-label);}:host-context([dir="rtl"]) label{padding-right:0px;padding-left:20px;}:host([no-label-float]) label{top:8px;}label.label-is-floating{font-size:12px;top:8px;}label.label-is-hidden{display:none;}:host([focused]) label.label-is-floating{color:var(--paper-dropdown-menu-focus-color, --primary-color);}:host([invalid]) label.label-is-floating{color:var(--paper-dropdown-error-color, --error-color);}label:after{background-color:var(--paper-dropdown-menu-focus-color, --primary-color);bottom:7px;content:'';height:2px;left:45%;position:absolute;transition-duration:.2s;transition-timing-function:cubic-bezier(.4,0,.2,1);visibility:hidden;width:8px;z-index:10;}:host([invalid]) label:after{background-color:var(--paper-dropdown-error-color, --error-color);}:host([no-label-float]) label:after{bottom:7px;}:host([focused]:not([disabled])) label:after{left:0;visibility:visible;width:100%;}iron-icon{position:absolute;right:0px;bottom:8px;@apply (--paper-font-subhead);margin-top:12px;color:var(--disabled-text-color);@apply (--paper-dropdown-menu-icon);}:host-context([dir="rtl"]) iron-icon{left:0;right:auto;}:host([no-label-float]) iron-icon{margin-top:0px;}.error{display:inline-block;visibility:hidden;color:var(--paper-dropdown-error-color, --error-color);@apply (--paper-font-caption);position:absolute;left:0;right:0;bottom:-12px;}:host([invalid]) .error{visibility:visible;}</style>
+    <style include="paper-dropdown-menu-shared-styles">
+      :host(:focus) {
+        outline: none;
+      }
+
+      /**
+       * All of these styles below are for styling the fake-input display
+       */
+      .dropdown-trigger {
+        box-sizing: border-box;
+        position: relative;
+        width: 100%;
+        padding: 16px 0 8px 0;
+      }
+
+      :host([disabled]) .dropdown-trigger {
+        pointer-events: none;
+        opacity: var(--paper-dropdown-menu-disabled-opacity, 0.33);
+      }
+
+      :host([no-label-float]) .dropdown-trigger {
+        padding-top: 8px;   /* If there's no label, we need less space up top. */
+      }
+
+      #input {
+        @apply(--paper-font-subhead);
+        @apply(--paper-font-common-nowrap);
+        border-bottom: 1px solid var(--paper-dropdown-menu-color, --secondary-text-color);
+        color: var(--paper-dropdown-menu-color, --primary-text-color);
+        width: 200px;  /* Default size of an <input> */
+        min-height: 24px;
+        box-sizing: border-box;
+        padding: 12px 20px 0 0;   /* Right padding so that text doesn't overlap the icon */
+        outline: none;
+        @apply(--paper-dropdown-menu-input);
+      }
+
+      :host-context([dir="rtl"]) #input {
+        padding-right: 0px;
+        padding-left: 20px;
+      }
+
+      :host([disabled]) #input {
+        border-bottom: 1px dashed var(--paper-dropdown-menu-color, --secondary-text-color);
+      }
+
+      :host([invalid]) #input {
+        border-bottom: 2px solid var(--paper-dropdown-error-color, --error-color);
+      }
+
+      :host([no-label-float]) #input {
+        padding-top: 0;   /* If there's no label, we need less space up top. */
+      }
+
+      label {
+        @apply(--paper-font-subhead);
+        @apply(--paper-font-common-nowrap);
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /**
+         * The container has a 16px top padding, and there's 12px of padding
+         * between the input and the label (from the input's padding-top)
+         */
+        top: 28px;
+        box-sizing: border-box;
+        width: 100%;
+        padding-right: 20px;    /* Right padding so that text doesn't overlap the icon */
+        text-align: left;
+        transition-duration: .2s;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        color: var(--paper-dropdown-menu-color, --secondary-text-color);
+        @apply(--paper-dropdown-menu-label);
+      }
+
+      :host-context([dir="rtl"]) label {
+        padding-right: 0px;
+        padding-left: 20px;
+      }
+
+      :host([no-label-float]) label {
+        top: 8px;
+      }
+
+      label.label-is-floating {
+        font-size: 12px;
+        top: 8px;
+      }
+
+      label.label-is-hidden {
+        display: none;
+      }
+
+      :host([focused]) label.label-is-floating {
+        color: var(--paper-dropdown-menu-focus-color, --primary-color);
+      }
+
+      :host([invalid]) label.label-is-floating {
+        color: var(--paper-dropdown-error-color, --error-color);
+      }
+
+      /**
+       * Sets up the focused underline. It's initially hidden, and becomes
+       * visible when it's focused.
+       */
+      label:after {
+        background-color: var(--paper-dropdown-menu-focus-color, --primary-color);
+        bottom: 7px;    /* The container has an 8px bottom padding */
+        content: '';
+        height: 2px;
+        left: 45%;
+        position: absolute;
+        transition-duration: .2s;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        visibility: hidden;
+        width: 8px;
+        z-index: 10;
+      }
+
+      :host([invalid]) label:after {
+        background-color: var(--paper-dropdown-error-color, --error-color);
+      }
+
+      :host([no-label-float]) label:after {
+        bottom: 7px;    /* The container has a 8px bottom padding */
+      }
+
+      :host([focused]:not([disabled])) label:after {
+        left: 0;
+        visibility: visible;
+        width: 100%;
+      }
+
+      iron-icon {
+        position: absolute;
+        right: 0px;
+        bottom: 8px;    /* The container has an 8px bottom padding */
+        @apply(--paper-font-subhead);
+        margin-top: 12px;
+        color: var(--disabled-text-color);
+        @apply(--paper-dropdown-menu-icon);
+      }
+
+      :host-context([dir="rtl"]) iron-icon {
+        left: 0;
+        right: auto;
+      }
+
+      :host([no-label-float]) iron-icon {
+        margin-top: 0px;
+      }
+
+      .error {
+        display: inline-block;
+        visibility: hidden;
+        color: var(--paper-dropdown-error-color, --error-color);
+        @apply(--paper-font-caption);
+        position: absolute;
+        left:0;
+        right:0;
+        bottom: -12px;
+      }
+
+      :host([invalid]) .error {
+        visibility: visible;
+      }
+    </style>
 
     
     <span role="button"></span>

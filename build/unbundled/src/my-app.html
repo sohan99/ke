@@ -17,15 +17,86 @@
  
 
  <link rel="import" href="my-icons.html">
- <link rel="import" href="my-home.html">
+ <link rel="import" href="my-home.html"> 
+  <link rel="import" href="my-about-us.html"> 
+  <link rel="import" href="my-our-programs.html"> 
+  <link rel="import" href="my-maria-montessori.html"> 
+  <link rel="import" href="my-faqs-colaps.html"> 
+  <link rel="import" href="my-contact-us.html">
+  <link rel="import" href="my-mission.html">
+  <link rel="import" href="my-gallery.html">
+  <link rel="import" href="my-parents.html">
+
+
+
+
  <link rel="import" href="admissions-open.html">
+ <link rel="import" href="notifications-bottom.html">
 
 
  </head><body><dom-module id="my-app">
 
    <template>
 
-    <style>:host{--app-primary-color:#4285f4;--app-secondary-color:black;}app-header{background-color:#fff;color:#757575;}app-header paper-icon-button{--paper-icon-button-ink-color:white;}.drawer-list{margin:0 20px;}.drawer-list a{display:block;padding:0 16px;line-height:40px;text-decoration:none;color:var(--app-secondary-color);}.drawer-list a.iron-selected{color:black;font-weight:bold;}.drawer-list a.subroute{padding-left:32px;}:host{display:initial;}paper-tab[link] a{@apply (--layout-horizontal);@apply (--layout-center-center);color:#757575;text-decoration:none;}paper-tab[link]{padding:0 16px;--paper-tabs-selection-bar-color:--paper-teal-a400;}paper-tab{--paper-tabs-selection-bar-color:--paper-teal-a400;}@media screen and (max-width: 500px){paper-tabs{display:none;}}</style>
+    <style>
+
+       :host {
+       /*display: block;*/
+         --app-primary-color: #4285f4;
+         --app-secondary-color: black;
+       }
+
+       app-header {
+         /*background-color: var(--app-primary-color);
+         color: #fff;*/
+         background-color: #fff;
+         color: #757575;;
+       }
+       app-header paper-icon-button {
+         --paper-icon-button-ink-color: white;
+       }
+
+       .drawer-list {
+         margin: 0 20px;
+       }
+       .drawer-list a {
+         display: block;
+         padding: 0 16px;
+         line-height: 40px;
+         text-decoration: none;
+         color: var(--app-secondary-color);
+       }
+       .drawer-list a.iron-selected {
+         color: black;
+         font-weight: bold;
+       }
+       .drawer-list a.subroute {
+         padding-left: 32px;
+       }
+
+       :host{
+           display:initial;
+         }
+         paper-tab[link] a{
+            @apply(--layout-horizontal);
+            @apply(--layout-center-center);
+            color: #757575;;
+            text-decoration: none;
+          }
+          paper-tab[link]{
+            padding: 0 16px;
+            --paper-tabs-selection-bar-color: --paper-teal-a400;
+          }
+          paper-tab {
+            --paper-tabs-selection-bar-color: --paper-teal-a400;
+          }
+
+          @media screen and (max-width: 500px) {
+              paper-tabs{
+                  display:none;
+              }
+          }
+     </style>
 
 
 
@@ -42,12 +113,12 @@
            <a name="home" href="/home">HOME</a>
            <a name="about-us" href="/about-us">ABOUT US</a>
            <a name="our-programs" href="/our-programs">OUR PROGRAMS</a>
+           <a name="mission" href="/mission"> OUR MISSION </a>
+           <a name="parents" href="/parents"> PARENTS </a>
            <a href="/maria-montessori" name="maria-montessori">MONTESSORI</a>
+           <a name="gallery" href="/gallery"> GALLERY </a>
            <a name="faqs-colaps" href="/faqs-colaps"> FAQS </a>
            <a name="contact-us" href="/contact-us"> CONTACT US </a>
-           <a name="mission" href="/mission"> OUR MISSION </a>
-           <a name="gallery" href="/gallery"> Gallery </a>
-
          </iron-selector>
        </app-drawer>
 
@@ -59,16 +130,17 @@
              <paper-icon-button icon="menu" drawer-toggle=""></paper-icon-button>
 
              <div title="">KIDZ EDEN</div>
-             <paper-tabs selected="[[page]]" attr-for-selected="name" scrollable="" sticky="" style="min-width:70%;float:right" fit-container="true">
-               <paper-tab link="" name="home"><a href="/home" class="home" tabindex="-1">HOME</a> </paper-tab>
+             <paper-tabs selected="[[page]]" attr-for-selected="name" scrollable="" sticky="" style="min-width:70%;float:right;margin-right: 15px" fit-container="true">
+                <paper-tab link="" name="home"><a href="/home" class="home" tabindex="-1">HOME</a> </paper-tab>
                <paper-tab link="" name="about-us"><a href="/about-us" class="home" tabindex="-1">ABOUT</a> </paper-tab>
                <paper-tab link="" name="our-programs"><a href="/our-programs" class="home" tabindex="-1">PROGRAMS</a> </paper-tab>
-               <paper-tab link="" name="maria-montessori"><a href="/maria-montessori" class="home" tabindex="-1">MONTESSORI</a> </paper-tab>
                <paper-tab link="" name="mission"><a href="/mission" class="home" tabindex="-1">MISSION </a> </paper-tab>
+               <paper-tab link="" name="parents"><a href="/parents" class="home" tabindex="-1">PARENTS</a> </paper-tab>
+               <paper-tab link="" name="maria-montessori"><a href="/maria-montessori" class="home" tabindex="-1">MONTESSORI</a> </paper-tab>
+
                <paper-tab link="" name="gallery"><a href="/gallery" class="home" tabindex="-1">GALLERY</a> </paper-tab>
                <paper-tab link="" name="contact-us"><a href="/contact-us" tabindex="-1">CONTACT</a> </paper-tab>
                <paper-tab link="" name="faqs-colaps"><a href="/faqs-colaps" class="faqs-colaps" tabindex="-1">FAQS</a> </paper-tab>
-               <paper-tab link="" name="home"><a href="/home" class="home" tabindex="-1">MORE</a> </paper-tab>
              </paper-tabs>
 
 
@@ -76,7 +148,7 @@
 
          </app-header>
 
-         <iron-pages role="main" selected="[[page]]" attr-for-selected="name">
+          <iron-pages role="main" selected="[[page]]" attr-for-selected="name">
            <my-home name="home"></my-home>
            <my-about-us name="about-us"></my-about-us>
            <my-our-programs name="our-programs"></my-our-programs>
@@ -85,6 +157,7 @@
            <my-contact-us width="100%" pos="fixed" minh="85%" maxh="86%" name="contact-us"></my-contact-us>
            <my-mission name="mission"></my-mission>
            <my-gallery name="gallery"></my-gallery>
+           <my-parents name="parents"></my-parents>
          </iron-pages>
 
          
@@ -94,10 +167,12 @@
        </app-header-layout>
 
      </app-drawer-layout>
+     <notifications-bottom></notifications-bottom>
      <admissions-open></admissions-open>
+     
    </template>
 
-   <script>Polymer({is:"my-app",properties:{page:{type:String,reflectToAttribute:!0,observer:"_pageChanged"}},observers:["_routePageChanged(routeData.page)"],_routePageChanged:function(e){this.page=e||"home"},_pageChanged:function(e){this.importHref(this.resolveUrl("my-"+e+".html"),null,null,!0)}});</script>
+   <script>Polymer({is:"my-app",properties:{page:{type:String,reflectToAttribute:!0}},observers:["_routePageChanged(routeData.page)"],_routePageChanged:function(e){this.page=e||"home"},_pageChanged:function(e){this.importHref(this.resolveUrl("my-"+e+".html"),null,null,!0)}});</script>
 
  </dom-module>
 </body></html>

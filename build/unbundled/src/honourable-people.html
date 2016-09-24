@@ -5,9 +5,61 @@
 </head><body><dom-module id="honourable-people">
 <style include="iron-flex iron-flex-alignment"></style>
   <template>
+    <style>
+      :host {
+        display: block;
+        height:100%;
+        width:99%;
+        margin:auto;
+      }
+      .heading{
+        font-size: 84px;
+        font-weight: lighter;
+        opacity: 0.75;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      .lifespan{
+        font-size: 25px;
+        padding: 0;
+        margin: 0;
+        font-weight: lighter;
+        opacity: 0.75;
+      }
+      .sticky{
+        position: fixed;
+        top: 0%;
+        height:100%;
+        z-index: -99;
+      }
+      .overlow-hide{
+        overflow:hidden;
+      }
+      .text-container{
+        width:60%;
+        margin:auto;
+        text-align:center;
+      }
+      .blurry{
+        background-color:#fbfbff;
+        opacity:0.98;
+        min-height:120%;
+        width:100%;
+      }
 
-
-    <style>:host{display:block;height:100%;}.heading{font-size:84px;font-weight:lighter;opacity:0.75;padding-bottom:0;margin-bottom:0;margin-top:0;}.lifespan{font-size:25px;padding:0;margin:0;font-weight:lighter;opacity:0.75;}.sticky{position:fixed;top:0%;height:100%;z-index:-99;}.overlow-hide{overflow:hidden;}.container{height:100%;width:100%;background-color:white;text-align:center;}.text-container{width:60%;margin:auto;text-align:center;}.blurry{background-color:#fbfbff;opacity:0.98;min-height:120%;width:100%;}@media screen and (max-width: 800px){.heading{font-size:xx-large;}.lifespan{font-size:large;}.text-container{width:90%;}}</style>
+      @media screen and (max-width: 800px) {
+        .heading{
+          font-size: xx-large;
+        }
+        .lifespan{
+            font-size: large;
+        }
+        .text-container{
+          width:90%;
+        }
+      }
+    </style>
 
     
 
@@ -15,13 +67,13 @@
     
     
 
-<div class="horizontal layout center sticky overlow-hide">
+<div class="horizontal layout center sticky overlow-hide" style="width:98%">
      <div class="flex-3" style="text-align:center; width:50%">
        <img width="90%" style="margin:auto" src="kids_creativity/montessori_color.jpg">
      </div>
      <div class="flex">
        <p class="heading title"> Dr Maria Montessori </p>
-       <p class="lifespan subtitle"> 31<sup>st</sup> August, 1980 - May 6<sup>th</sup>, 1952</p>
+       <p class="lifespan subtitle"> 31<sup>st</sup> August, 1952 - May 6<sup>th</sup>, 1980</p>
      </div>
 
    </div>

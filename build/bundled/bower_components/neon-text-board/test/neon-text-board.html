@@ -1,7 +1,9 @@
-<!DOCTYPE html><html><head>
+<!doctype html>
+<html>
+	<head>
 		<title>neon-text-board</title>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 		<script src="../../web-component-tester/browser.js"></script>
@@ -18,8 +20,20 @@
 			</template>
 		</test-fixture>
 
-		<script>suite("<neon-text-board>",function(){suite("basic behavior",function(){var t;setup(function(){t=fixture("TrivialElement")}),test("requires one test (that always passes)",function(){})})});</script>
+		<script>
+			suite('<neon-text-board>', function() {
+				suite('basic behavior', function() {
+					var element;
 
-	
+					setup(function() {
+						element = fixture('TrivialElement');
+					});
 
-</body></html>
+					test('requires one test (that always passes)', function() {
+					});
+				});
+			});
+		</script>
+
+	</body>
+</html>
